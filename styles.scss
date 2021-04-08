@@ -1,17 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Rock+Salt&display=swap");
 
+$special-font: "Rock Salt", cursive;
+$dark-grey: #282828;
+$background-color: #f6fbfe;
+$transition-time: 500ms;
+$mobile-breakpoint: 720px;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   user-select: none;
+
+  a {
+    text-decoration: none;
+    color: $dark-grey;
+  }
 }
-/*font-family: "Rock Salt", cursive;*/
+
 body {
-  background-color: #f6fbfe;
-  color: black;
+  background-color: $background-color;
+  color: $dark-grey;
   font-family: "Montserrat", sans-serif;
+  font-weight: 700;
 
   .swiper-container {
     height: 100vh;
@@ -35,6 +47,8 @@ body {
       width: 100vw;
       height: 100vh;
       overflow: scroll;
+
+      @import "./landing";
     }
   }
 }

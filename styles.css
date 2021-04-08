@@ -7,11 +7,16 @@
   user-select: none;
 }
 
-/*font-family: "Rock Salt", cursive;*/
+* a {
+  text-decoration: none;
+  color: #282828;
+}
+
 body {
   background-color: #f6fbfe;
-  color: black;
+  color: #282828;
   font-family: "Montserrat", sans-serif;
+  font-weight: 700;
 }
 
 body .swiper-container {
@@ -36,4 +41,110 @@ body .swiper-container .main-body {
   width: 100vw;
   height: 100vh;
   overflow: scroll;
+}
+
+body .swiper-container .main-body .landing {
+  height: 100%;
+  width: 100%;
+  background-image: url("./images/background-dog.jpg");
+  background-color: #f6fbfe;
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: cover;
+}
+
+body .swiper-container .main-body .landing .fader {
+  height: 100%;
+  width: 100%;
+  background: #020024;
+  background: linear-gradient(180deg, rgba(2, 0, 36, 0) 0%, #f6fbfe 50%, #f6fbfe 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+body .swiper-container .main-body .landing .top {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  /*Mobile version*/
+}
+
+body .swiper-container .main-body .landing .top .logo {
+  display: flex;
+  align-items: center;
+}
+
+body .swiper-container .main-body .landing .top .logo #logo {
+  width: 3em;
+}
+
+body .swiper-container .main-body .landing .top .logo #logo-name {
+  text-align: left;
+  font-family: "Rock Salt", cursive;
+}
+
+body .swiper-container .main-body .landing .top nav a {
+  color: #282828;
+  text-decoration: none;
+  transition: 500ms;
+  font-size: 1em;
+  margin: 0 0.5em;
+}
+
+body .swiper-container .main-body .landing .top nav a:hover {
+  font-size: 1.5em;
+  text-decoration: underline;
+}
+
+body .swiper-container .main-body .landing .top nav .accn-effect {
+  padding: 0.5em;
+  border: 0.1em solid black;
+  border-radius: 0.5em;
+}
+
+body .swiper-container .main-body .landing .top nav .accn-effect:last-child {
+  color: #f6fbfe;
+  background-color: #282828;
+}
+
+body .swiper-container .main-body .landing .top nav .accn-effect:hover {
+  text-decoration: none;
+  font-size: 1.25em;
+}
+
+body .swiper-container .main-body .landing .landing-action {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body .swiper-container .main-body .landing .landing-action .action-message {
+  font-size: 3em;
+  font-weight: bolder;
+  text-align: center;
+}
+
+body .swiper-container .main-body .landing .landing-action .links {
+  width: 100%;
+}
+
+body .swiper-container .main-body .landing .landing-action .links i {
+  font-size: 2.75em;
+  transition: 500ms;
+  margin: 0 0.5em;
+}
+
+body .swiper-container .main-body .landing .landing-action .links i:hover {
+  font-size: 3.25em;
 }
