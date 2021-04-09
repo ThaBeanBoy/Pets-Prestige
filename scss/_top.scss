@@ -1,0 +1,114 @@
+.top {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 100%;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+
+  #hamburger {
+    display: none;
+    cursor: pointer;
+
+    flex-direction: column;
+    align-items: center;
+    width: 10vw;
+    transition: $transition-time;
+
+    $bar-height: 0.2em; /* searchIn(swiperStuff.js, sassBarHeight) */
+    $outer-bar-distance: 0.2em; /* searchIn(swiperStuff.js, sassOuterBarDistance)*/
+    .bar {
+      width: 100%;
+      height: $bar-height;
+      background-color: $dark-grey;
+      border-radius: 0.25em;
+      transition: $transition-time;
+
+      &:nth-child(odd) {
+        position: relative;
+        width: 75%;
+      }
+
+      &:nth-child(1) {
+        top: -$outer-bar-distance;
+      }
+      &:nth-child(3) {
+        top: $outer-bar-distance;
+      }
+    }
+
+    &.cross .bar {
+      &:nth-child(2) {
+        width: 0;
+      }
+
+      /*Making the x icon*/
+      &:nth-child(1) {
+        top: 0 + $bar-height;
+        transform: rotate(45deg);
+      }
+      &:nth-child(3) {
+        top: 0-$bar-height;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    #logo {
+      width: 3em;
+    }
+    #logo-name {
+      text-align: left;
+      font-family: $special-font;
+    }
+  }
+
+  nav {
+    a {
+      color: $dark-grey;
+      text-decoration: none;
+      transition: $transition-time;
+      font-size: 1em;
+      margin: 0 0.5em;
+
+      &:hover {
+        font-size: 1.5em;
+        text-decoration: underline;
+      }
+    }
+
+    .accn-effect {
+      padding: 0.5em;
+      border: 0.1em solid black;
+      border-radius: 0.5em;
+
+      &:last-child {
+        color: $background-color;
+        background-color: $dark-grey;
+      }
+
+      &:hover {
+        text-decoration: none;
+        font-size: 1.25em;
+      }
+    }
+  }
+
+  /*Mobile version*/
+  @media only screen and (max-width: $mobile-breakpoint) {
+    #hamburger {
+      display: flex;
+    }
+
+    nav {
+      display: none;
+    }
+  }
+}

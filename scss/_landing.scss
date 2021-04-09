@@ -24,61 +24,6 @@
     z-index: -1;
   }
 
-  .top {
-    padding: 1em;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-
-    .logo {
-      display: flex;
-      align-items: center;
-      #logo {
-        width: 3em;
-      }
-      #logo-name {
-        text-align: left;
-        font-family: $special-font;
-      }
-    }
-
-    nav {
-      a {
-        color: $dark-grey;
-        text-decoration: none;
-        transition: $transition-time;
-        font-size: 1em;
-        margin: 0 0.5em;
-
-        &:hover {
-          font-size: 1.5em;
-          text-decoration: underline;
-        }
-      }
-
-      .accn-effect {
-        padding: 0.5em;
-        border: 0.1em solid black;
-        border-radius: 0.5em;
-
-        &:last-child {
-          color: $background-color;
-          background-color: $dark-grey;
-        }
-
-        &:hover {
-          text-decoration: none;
-          font-size: 1.25em;
-        }
-      }
-    }
-
-    /*Mobile version*/
-    @media only screen and (max-width: $mobile-breakpoint) {
-    }
-  }
-
   .landing-action {
     position: absolute;
     top: 35%;

@@ -34,13 +34,129 @@ body .swiper-container .swiper-slide {
 
 body .swiper-container .menu {
   height: 100vh;
-  width: 50vw;
+  width: 70vw;
+  background-color: #282828;
 }
 
 body .swiper-container .main-body {
   width: 100vw;
   height: 100vh;
-  overflow: scroll;
+  overflow-y: scroll;
+}
+
+body .swiper-container .main-body .top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  /*Mobile version*/
+}
+
+body .swiper-container .main-body .top #hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  width: 10vw;
+  transition: 500ms;
+  /* searchIn(swiperStuff.js, sassBarHeight) */
+  /* searchIn(swiperStuff.js, sassOuterBarDistance)*/
+}
+
+body .swiper-container .main-body .top #hamburger .bar {
+  width: 100%;
+  height: 0.2em;
+  background-color: #282828;
+  border-radius: 0.25em;
+  transition: 500ms;
+}
+
+body .swiper-container .main-body .top #hamburger .bar:nth-child(odd) {
+  position: relative;
+  width: 75%;
+}
+
+body .swiper-container .main-body .top #hamburger .bar:nth-child(1) {
+  top: -0.2em;
+}
+
+body .swiper-container .main-body .top #hamburger .bar:nth-child(3) {
+  top: 0.2em;
+}
+
+body .swiper-container .main-body .top #hamburger.cross .bar {
+  /*Making the x icon*/
+}
+
+body .swiper-container .main-body .top #hamburger.cross .bar:nth-child(2) {
+  width: 0;
+}
+
+body .swiper-container .main-body .top #hamburger.cross .bar:nth-child(1) {
+  top: 0.2em;
+  transform: rotate(45deg);
+}
+
+body .swiper-container .main-body .top #hamburger.cross .bar:nth-child(3) {
+  top: -0.2em;
+  transform: rotate(-45deg);
+}
+
+body .swiper-container .main-body .top .logo {
+  display: flex;
+  align-items: center;
+}
+
+body .swiper-container .main-body .top .logo #logo {
+  width: 3em;
+}
+
+body .swiper-container .main-body .top .logo #logo-name {
+  text-align: left;
+  font-family: "Rock Salt", cursive;
+}
+
+body .swiper-container .main-body .top nav a {
+  color: #282828;
+  text-decoration: none;
+  transition: 500ms;
+  font-size: 1em;
+  margin: 0 0.5em;
+}
+
+body .swiper-container .main-body .top nav a:hover {
+  font-size: 1.5em;
+  text-decoration: underline;
+}
+
+body .swiper-container .main-body .top nav .accn-effect {
+  padding: 0.5em;
+  border: 0.1em solid black;
+  border-radius: 0.5em;
+}
+
+body .swiper-container .main-body .top nav .accn-effect:last-child {
+  color: #f6fbfe;
+  background-color: #282828;
+}
+
+body .swiper-container .main-body .top nav .accn-effect:hover {
+  text-decoration: none;
+  font-size: 1.25em;
+}
+
+@media only screen and (max-width: 720px) {
+  body .swiper-container .main-body .top #hamburger {
+    display: flex;
+  }
+  body .swiper-container .main-body .top nav {
+    display: none;
+  }
 }
 
 body .swiper-container .main-body .landing {
@@ -64,58 +180,6 @@ body .swiper-container .main-body .landing .fader {
   top: 0;
   left: 0;
   z-index: -1;
-}
-
-body .swiper-container .main-body .landing .top {
-  padding: 1em;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
-  /*Mobile version*/
-}
-
-body .swiper-container .main-body .landing .top .logo {
-  display: flex;
-  align-items: center;
-}
-
-body .swiper-container .main-body .landing .top .logo #logo {
-  width: 3em;
-}
-
-body .swiper-container .main-body .landing .top .logo #logo-name {
-  text-align: left;
-  font-family: "Rock Salt", cursive;
-}
-
-body .swiper-container .main-body .landing .top nav a {
-  color: #282828;
-  text-decoration: none;
-  transition: 500ms;
-  font-size: 1em;
-  margin: 0 0.5em;
-}
-
-body .swiper-container .main-body .landing .top nav a:hover {
-  font-size: 1.5em;
-  text-decoration: underline;
-}
-
-body .swiper-container .main-body .landing .top nav .accn-effect {
-  padding: 0.5em;
-  border: 0.1em solid black;
-  border-radius: 0.5em;
-}
-
-body .swiper-container .main-body .landing .top nav .accn-effect:last-child {
-  color: #f6fbfe;
-  background-color: #282828;
-}
-
-body .swiper-container .main-body .landing .top nav .accn-effect:hover {
-  text-decoration: none;
-  font-size: 1.25em;
 }
 
 body .swiper-container .main-body .landing .landing-action {
