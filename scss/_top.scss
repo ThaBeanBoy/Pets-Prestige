@@ -2,6 +2,7 @@
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 1;
 
   width: 100%;
   padding: 1em;
@@ -38,22 +39,6 @@
       }
       &:nth-child(3) {
         top: $outer-bar-distance;
-      }
-    }
-
-    &.cross .bar {
-      &:nth-child(2) {
-        width: 0;
-      }
-
-      /*Making the x icon*/
-      &:nth-child(1) {
-        top: 0 + $bar-height;
-        transform: rotate(45deg);
-      }
-      &:nth-child(3) {
-        top: 0-$bar-height;
-        transform: rotate(-45deg);
       }
     }
   }

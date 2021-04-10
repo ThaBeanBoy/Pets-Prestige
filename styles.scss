@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Rock+Salt&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Rock+Salt&display=swap');
 
-$special-font: "Rock Salt", cursive;
+$special-font: 'Rock Salt', cursive;
 $dark-grey: #282828;
 $background-color: #f6fbfe;
 $transition-time: 500ms;
@@ -22,7 +22,7 @@ $mobile-breakpoint: 720px;
 body {
   background-color: $background-color;
   color: $dark-grey;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 
   .swiper-container {
@@ -48,7 +48,7 @@ body {
       width: 100vw;
       height: 100vh;
       overflow-y: scroll;
-      @import "./scss/top", "./scss/landing";
+      @import './scss/top', './scss/landing';
     }
   }
 }

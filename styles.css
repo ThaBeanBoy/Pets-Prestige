@@ -15,7 +15,7 @@
 body {
   background-color: #f6fbfe;
   color: #282828;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 }
 
@@ -48,6 +48,7 @@ body .swiper-container .main-body .top {
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 1;
   width: 100%;
   padding: 1em;
   display: flex;
@@ -87,24 +88,6 @@ body .swiper-container .main-body .top #hamburger .bar:nth-child(1) {
 
 body .swiper-container .main-body .top #hamburger .bar:nth-child(3) {
   top: 0.2em;
-}
-
-body .swiper-container .main-body .top #hamburger.cross .bar {
-  /*Making the x icon*/
-}
-
-body .swiper-container .main-body .top #hamburger.cross .bar:nth-child(2) {
-  width: 0;
-}
-
-body .swiper-container .main-body .top #hamburger.cross .bar:nth-child(1) {
-  top: 0.2em;
-  transform: rotate(45deg);
-}
-
-body .swiper-container .main-body .top #hamburger.cross .bar:nth-child(3) {
-  top: -0.2em;
-  transform: rotate(-45deg);
 }
 
 body .swiper-container .main-body .top .logo {
@@ -175,16 +158,16 @@ body .swiper-container .main-body .landing .fader {
   height: 100%;
   width: 100%;
   background: #020024;
-  background: linear-gradient(180deg, rgba(2, 0, 36, 0) 0%, #f6fbfe 50%, #f6fbfe 100%);
+  background: linear-gradient(180deg, rgba(2, 0, 36, 0) 0%, rgba(9, 9, 121, 0) 50%, #f6fbfe 100%);
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: 0;
 }
 
 body .swiper-container .main-body .landing .landing-action {
   position: absolute;
-  top: 35%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
@@ -211,4 +194,13 @@ body .swiper-container .main-body .landing .landing-action .links i {
 
 body .swiper-container .main-body .landing .landing-action .links i:hover {
   font-size: 3.25em;
+}
+
+@media only screen and (max-width: 720px) {
+  body .swiper-container .main-body .landing .landing-action .action-message {
+    font-size: 2em;
+  }
+  body .swiper-container .main-body .landing .landing-action .links {
+    font-size: 1rem;
+  }
 }
