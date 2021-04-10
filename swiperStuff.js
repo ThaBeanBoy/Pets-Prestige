@@ -14,13 +14,25 @@ var swiper = new Swiper('.swiper-container', {
   slideToClickedSlide: true,
 
   edgeSwipeThreshold: 20,
-  allowTouchMove: false,
+  allowTouchMove: true,
   /* allowTouchMove: true, */
 
   on: {
     afterInit: () => {
       initialized = true;
       openNav = false;
+    },
+    //*Only allowing swiper to take effect in a certain range and when in mobile version
+    touchStart: (e) => {
+      /* swiper.allowTouchMove = false; */
+      /* console.log(e.touches.startX); */
+      const onMainPage = swiper.activeIndex == 1 ? true : false;
+      const xPosOnSwipe = e.touches.startX;
+      if (onMainPage) {
+        swiper.allowTouchMove = xPosOnSwipe < 0.2 * innerWidth ? true : false;
+      } else {
+        swiper.allowTouchMove = true;
+      }
     },
     transitionStart: (e) => {
       console.log(e.touches.startX);
@@ -68,18 +80,6 @@ var swiper = new Swiper('.swiper-container', {
       }
     },
   },
-});
-
-//*Only allowing swiper to take effect in a certain range and when in mobile version
-window.addEventListener('mousemove', (e) => {
-  if (
-    e.clientX <= (swiper.activeIndex == 1 ? 0.15 : 1) * innerWidth &&
-    innerWidth <= mobileBreakpoint
-  ) {
-    swiper.allowTouchMove = true;
-  } else {
-    swiper.allowTouchMove = false;
-  }
 });
 
 hamBurger.addEventListener('click', () => {
