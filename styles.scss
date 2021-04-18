@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Rock+Salt&display=swap');
 
-$special-font: 'Rock Salt', cursive;
+$Rock-Salt-font: 'Rock Salt', cursive;
+$Montserrat-font: 'Montserrat', sans-serif;
 $dark-grey: #282828;
 $background-color: #f6fbfe;
 $transition-time: 500ms;
@@ -32,10 +33,6 @@ body {
     .swiper-slide {
       text-align: center;
       font-size: 18px;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
     .menu {
@@ -48,7 +45,19 @@ body {
       width: 100vw;
       height: 100vh;
       overflow-y: scroll;
-      @import './scss/top', './scss/landing';
+
+      .section-name {
+        font-size: large;
+        font-family: $Rock-Salt-font;
+        font-size: 3rem;
+        width: auto;
+        text-align: left;
+        padding-left: 1rem;
+        /* position: absolute;
+        top: 1rem;
+        left: 1rem; */
+      }
+      @import './scss/top', './scss/landing', './scss/shop';
     }
   }
 }
