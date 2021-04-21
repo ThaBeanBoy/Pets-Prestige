@@ -1,5 +1,5 @@
 .shop {
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
   position: relative;
 
@@ -47,16 +47,37 @@
       justify-content: space-between;
       align-items: center;
 
-      .description-of-shop {
-        font-size: $font-size-of-the-bottoms;
-      }
-
       #go-to-shop {
         background-color: $dark-grey;
         color: $background-color;
         padding: 0.5rem;
         border-radius: 0.25em;
         font-size: $font-size-of-the-bottoms;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 875px) {
+    .section-name {
+      text-align: center;
+    }
+
+    .main-stuff {
+      flex-direction: column;
+      padding: 0;
+      .left {
+        width: 100%;
+        .message {
+          display: none;
+        }
+      }
+      .right {
+        width: 100%;
+        padding: 1rem;
+
+        #go-to-shop {
+          margin-top: 1rem;
+        }
       }
     }
   }

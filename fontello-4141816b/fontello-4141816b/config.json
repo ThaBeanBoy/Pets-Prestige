@@ -47,6 +47,12 @@
       "css": "location",
       "code": 59393,
       "src": "entypo"
+    },
+    {
+      "uid": "399ef63b1e23ab1b761dfbb5591fa4da",
+      "css": "right-open",
+      "code": 59394,
+      "src": "fontawesome"
     }
   ]
 }

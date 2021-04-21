@@ -215,7 +215,7 @@ body .swiper-container .main-body .landing .landing-action .links i:hover {
 }
 
 body .swiper-container .main-body .shop {
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
   position: relative;
   display: flex;
@@ -260,14 +260,33 @@ body .swiper-container .main-body .shop .main-stuff .right {
   align-items: center;
 }
 
-body .swiper-container .main-body .shop .main-stuff .right .description-of-shop {
-  font-size: 1.5em;
-}
-
 body .swiper-container .main-body .shop .main-stuff .right #go-to-shop {
   background-color: #282828;
   color: #f6fbfe;
   padding: 0.5rem;
   border-radius: 0.25em;
   font-size: 1.5em;
+}
+
+@media only screen and (max-width: 875px) {
+  body .swiper-container .main-body .shop .section-name {
+    text-align: center;
+  }
+  body .swiper-container .main-body .shop .main-stuff {
+    flex-direction: column;
+    padding: 0;
+  }
+  body .swiper-container .main-body .shop .main-stuff .left {
+    width: 100%;
+  }
+  body .swiper-container .main-body .shop .main-stuff .left .message {
+    display: none;
+  }
+  body .swiper-container .main-body .shop .main-stuff .right {
+    width: 100%;
+    padding: 1rem;
+  }
+  body .swiper-container .main-body .shop .main-stuff .right #go-to-shop {
+    margin-top: 1rem;
+  }
 }
