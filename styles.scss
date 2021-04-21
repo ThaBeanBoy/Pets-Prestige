@@ -54,11 +54,13 @@ body {
         width: auto;
         text-align: left;
         padding-left: 1rem;
-        /* position: absolute;
-        top: 1rem;
-        left: 1rem; */
       }
-      @import './scss/top', './scss/landing', './scss/shop';
+
+      #parrots {
+        width: 100%;
+      }
+
+      @import './scss/top', './scss/landing', './scss/shop', './scss/theParrots';
     }
   }
 }

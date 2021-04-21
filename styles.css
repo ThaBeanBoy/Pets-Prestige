@@ -48,9 +48,10 @@ body .swiper-container .main-body .section-name {
   width: auto;
   text-align: left;
   padding-left: 1rem;
-  /* position: absolute;
-        top: 1rem;
-        left: 1rem; */
+}
+
+body .swiper-container .main-body #parrots {
+  width: 100%;
 }
 
 body .swiper-container .main-body .top {
@@ -300,4 +301,18 @@ body .swiper-container .main-body .shop .main-stuff .right #go-to-shop:hover {
   body .swiper-container .main-body .shop .main-stuff .right #go-to-shop {
     margin-top: 1rem;
   }
+}
+
+body .swiper-container .main-body .the-parrots {
+  position: relative;
+  width: 100%;
+}
+
+body .swiper-container .main-body .the-parrots #right-angled-triangle {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20vh;
+  z-index: 1;
+  background-color: black;
 }
