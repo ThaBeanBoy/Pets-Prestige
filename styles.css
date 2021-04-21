@@ -137,6 +137,10 @@ body .swiper-container .main-body .top nav .accn-effect:last-child {
   background-color: #282828;
 }
 
+body .swiper-container .main-body .top nav .accn-effect:last-child:hover {
+  filter: brightness(1.5);
+}
+
 body .swiper-container .main-body .top nav .accn-effect:hover {
   text-decoration: none;
   font-size: 1.25em;
@@ -203,6 +207,7 @@ body .swiper-container .main-body .landing .landing-action .links i {
 
 body .swiper-container .main-body .landing .landing-action .links i:hover {
   font-size: 3.25em;
+  filter: brightness(1.25);
 }
 
 @media only screen and (max-width: 720px) {
@@ -266,6 +271,12 @@ body .swiper-container .main-body .shop .main-stuff .right #go-to-shop {
   padding: 0.5rem;
   border-radius: 0.25em;
   font-size: 1.5em;
+  transition: 500ms;
+}
+
+body .swiper-container .main-body .shop .main-stuff .right #go-to-shop:hover {
+  font-size: 1.75em;
+  filter: brightness(1.5);
 }
 
 @media only screen and (max-width: 875px) {

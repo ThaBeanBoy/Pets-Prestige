@@ -77,6 +77,10 @@
       &:last-child {
         color: $background-color;
         background-color: $dark-grey;
+
+        &:hover {
+          filter: brightness($constant-filter-brightness);
+        }
       }
 
       &:hover {
