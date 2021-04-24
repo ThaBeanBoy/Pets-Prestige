@@ -1,0 +1,39 @@
+.about {
+  width: 100%;
+  .main-stuff {
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+
+    #goldFish {
+      width: 35%;
+      float: right;
+    }
+  }
+
+  #goldFishForMobile {
+    display: none;
+  }
+
+  @media only screen and (max-width: 875px) {
+    .section-name {
+      text-align: center;
+    }
+
+    .main-stuff {
+      text-align: center;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+
+      #goldFish {
+        display: none;
+      }
+    }
+
+    #goldFishForMobile {
+      display: block;
+      width: 100%;
+    }
+  }
+}

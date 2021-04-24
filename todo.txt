@@ -1,3 +1,4 @@
-1.Disable scroll when nav is open
-2.Add about
-3.Add contact
+-Disable scroll when nav is open
+-Add about
+-Add contact
+-Fix nav
