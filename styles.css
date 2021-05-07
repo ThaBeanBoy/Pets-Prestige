@@ -33,6 +33,65 @@ body .swiper-container .menu {
   height: 100vh;
   width: 70vw;
   background-color: #282828;
+  color: #f6fbfe;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+body .swiper-container .menu .top {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+}
+
+body .swiper-container .menu .top img {
+  width: 4rem;
+}
+
+body .swiper-container .menu .links {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+body .swiper-container .menu .links a {
+  color: #f6fbfe;
+  font-size: 1.5rem;
+  margin: 0.75rem 0;
+}
+
+body .swiper-container .menu .links .accn-tings {
+  margin-top: 0.75rem;
+}
+
+body .swiper-container .menu .links .accn-tings a {
+  margin: 0 0.25rem;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+
+body .swiper-container .menu .links .accn-tings a:first-child {
+  border: 0.15rem solid #f6fbfe;
+}
+
+body .swiper-container .menu .links .accn-tings a:last-child {
+  background-color: #f6fbfe;
+  color: #282828;
+}
+
+body .swiper-container .menu .socials {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+body .swiper-container .menu .socials a {
+  color: #f6fbfe;
+  margin: 0 0.25rem;
 }
 
 body .swiper-container .main-body {
