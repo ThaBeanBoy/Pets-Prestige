@@ -6,6 +6,8 @@ const sassOuterBarDistance = '0.2em'; //* searchIn(_top.scss, $outer-bar-distanc
 let openNav;
 let initialized;
 
+let enableScroll = true;
+
 const openMenu = () => {
   swiper.slidePrev(400);
 };
@@ -41,6 +43,8 @@ var swiper = new Swiper('.swiper-container', {
       if (initialized) {
         const [bar1, bar2, bar3] = hamburger.children;
 
+        enableScroll = true;
+
         const onMainPage = swiper.activeIndex === 1 ? true : false;
         if (onMainPage) {
           hamBurger.addEventListener('click', openMenu, true);
@@ -56,6 +60,8 @@ var swiper = new Swiper('.swiper-container', {
           }, sassTransitionTime / 2);
         } else {
           hamBurger.removeEventListener('click', openMenu, true);
+
+          enableScroll = false;
 
           bar2.style.width = '0';
           setTimeout(() => {
@@ -80,4 +86,13 @@ var swiper = new Swiper('.swiper-container', {
       }
     },
   },
+});
+
+//Disable scroll when mobile nav is opening
+let scrollPosY = 0;
+const mainBody = document.querySelector('.main-body');
+mainBody.addEventListener('scroll', () => {
+  !enableScroll
+    ? mainBody.scrollTo(0, scrollPosY)
+    : (scrollPosY = mainBody.scrollTop);
 });
