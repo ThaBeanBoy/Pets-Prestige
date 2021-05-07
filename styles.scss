@@ -46,6 +46,7 @@ body {
       width: 100vw;
       height: 100vh;
       overflow-y: scroll;
+      scroll-behavior: auto;
 
       .section-name {
         font-size: large;
