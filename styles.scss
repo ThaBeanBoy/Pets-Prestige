@@ -60,7 +60,8 @@ body {
         width: 100%;
       }
 
-      @import './scss/top', './scss/landing', './scss/shop', './scss/about';
+      @import './scss/top', './scss/landing', './scss/shop', './scss/about',
+        './scss/footer';
     }
   }
 }

@@ -2,8 +2,11 @@
 .icon-phone-circled:before { content: '\e800'; } /* '' */
 .icon-location:before { content: '\e801'; } /* '' */
 .icon-right-open:before { content: '\e802'; } /* '' */
+.icon-mail:before { content: '\e803'; } /* '' */
+.icon-phone:before { content: '\e804'; } /* '' */
 .icon-twitter:before { content: '\f099'; } /* '' */
 .icon-apple:before { content: '\f179'; } /* '' */
 .icon-google:before { content: '\f1a0'; } /* '' */
+.icon-facebook:before { content: '\f30c'; } /* '' */
 .icon-facebook-circled:before { content: '\f30d'; } /* '' */
 .icon-instagram:before { content: '\f32d'; } /* '' */

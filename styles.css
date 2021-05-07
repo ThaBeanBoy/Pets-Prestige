@@ -318,6 +318,7 @@ body .swiper-container .main-body .about .main-stuff {
 body .swiper-container .main-body .about .main-stuff #goldFish {
   width: 35%;
   float: right;
+  margin: 0 0 0.5rem 0.5rem;
 }
 
 body .swiper-container .main-body .about #goldFishForMobile {
@@ -340,5 +341,78 @@ body .swiper-container .main-body .about #goldFishForMobile {
   body .swiper-container .main-body .about #goldFishForMobile {
     display: block;
     width: 100%;
+  }
+}
+
+body .swiper-container .main-body .footer {
+  height: auto;
+  position: relative;
+}
+
+body .swiper-container .main-body .footer .section-name {
+  margin-bottom: 1rem;
+}
+
+body .swiper-container .main-body .footer .main-stuff {
+  background-color: #282828;
+  padding: 1rem;
+  color: #f6fbfe;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+body .swiper-container .main-body .footer .main-stuff .block {
+  display: flex;
+  flex-direction: column;
+}
+
+body .swiper-container .main-body .footer .main-stuff .block .head {
+  font-size: 2rem;
+  /* margin-bottom: 0.5rem; */
+  text-align: left;
+  text-decoration: underline;
+}
+
+body .swiper-container .main-body .footer .main-stuff .block #physical-address {
+  text-align: left;
+}
+
+body .swiper-container .main-body .footer .main-stuff .block .content a {
+  color: #f6fbfe;
+  display: block;
+  margin: 0.75rem 0 0.75rem 0;
+  width: 100%;
+}
+
+body .swiper-container .main-body .footer .main-stuff .block .content a .icon-and-details {
+  display: flex;
+  justify-content: flex-start;
+}
+
+body .swiper-container .main-body .footer .main-stuff .block .content a .icon-and-details .icon {
+  margin-right: 0.5rem;
+}
+
+@media only screen and (max-width: 875px) {
+  body .swiper-container .main-body .footer .section-name {
+    text-align: center;
+  }
+  body .swiper-container .main-body .footer .main-stuff {
+    flex-direction: column;
+    align-items: center;
+  }
+  body .swiper-container .main-body .footer .main-stuff .block {
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  body .swiper-container .main-body .footer .main-stuff .block .content {
+    text-align: center;
+  }
+  body .swiper-container .main-body .footer .main-stuff .block .content a {
+    width: auto;
+  }
+  body .swiper-container .main-body .footer .main-stuff .block .content a .icon-and-details {
+    justify-content: center;
   }
 }

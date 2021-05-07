@@ -1,4 +1,4 @@
 -Disable scroll when nav is open
--Add about
--Add contact
 -Fix nav
+-Add scrollable paws
+-Add parallex effect
