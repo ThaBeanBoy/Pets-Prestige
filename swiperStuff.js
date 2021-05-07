@@ -95,4 +95,8 @@ mainBody.addEventListener('scroll', () => {
   !enableScroll
     ? mainBody.scrollTo(0, scrollPosY)
     : (scrollPosY = mainBody.scrollTop);
+
+  //Moving the topbar
+  const topBar = document.querySelector('.top');
+  topBar.style.top = `${mainBody.scrollTop}px`;
 });

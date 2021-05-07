@@ -60,8 +60,11 @@ body .swiper-container .main-body .top {
   top: 0;
   right: 0;
   z-index: 1;
+  background-color: #f6fbfe;
+  /* border-bottom: $dark-grey 0.1rem solid; */
   width: 100%;
-  padding: 1em;
+  padding: 0.5rem 1rem;
+  box-shadow: rgba(40, 40, 40, 0.5) 0 0.25em;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -115,7 +118,15 @@ body .swiper-container .main-body .top .logo #logo-name {
   font-family: "Rock Salt", cursive;
 }
 
+body .swiper-container .main-body .top nav {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+
 body .swiper-container .main-body .top nav a {
+  display: block;
   color: #282828;
   text-decoration: none;
   transition: 500ms;
@@ -130,13 +141,15 @@ body .swiper-container .main-body .top nav a:hover {
 
 body .swiper-container .main-body .top nav .accn-effect {
   padding: 0.5em;
+  background-color: #f6fbfe;
   border: 0.1em solid black;
-  border-radius: 0.5em;
+  border-radius: 0.5rem;
 }
 
 body .swiper-container .main-body .top nav .accn-effect:last-child {
   color: #f6fbfe;
   background-color: #282828;
+  margin-right: 0;
 }
 
 body .swiper-container .main-body .top nav .accn-effect:last-child:hover {
