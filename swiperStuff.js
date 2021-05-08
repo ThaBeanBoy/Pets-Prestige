@@ -91,12 +91,14 @@ var swiper = new Swiper('.swiper-container', {
 //Disable scroll when mobile nav is opening
 let scrollPosY = 0;
 const mainBody = document.querySelector('.main-body');
+const topBar = document.querySelector(
+  'body .swiper-container .swiper-wrapper .main-body .top'
+);
 mainBody.addEventListener('scroll', () => {
   !enableScroll
     ? mainBody.scrollTo(0, scrollPosY)
     : (scrollPosY = mainBody.scrollTop);
 
   //Moving the topbar
-  const topBar = document.querySelector('.top');
   topBar.style.top = `${mainBody.scrollTop}px`;
 });

@@ -44,6 +44,7 @@ body .swiper-container .menu .top {
   display: flex;
   align-items: center;
   padding: 0.5rem 0.75rem;
+  background-color: #282828;
 }
 
 body .swiper-container .menu .top img {
@@ -103,54 +104,16 @@ body .swiper-container .menu .socials a {
   margin: 0 0.25rem;
 }
 
-body .swiper-container .main-body {
-  width: 100vw;
-  height: 100vh;
-  overflow-y: scroll;
-  scroll-behavior: auto;
-}
-
-body .swiper-container .main-body .section-name {
-  font-size: large;
-  font-family: "Rock Salt", cursive;
-  font-size: 3rem;
-  width: auto;
-  text-align: left;
-  padding-left: 1rem;
-}
-
-body .swiper-container .main-body #parrots {
-  width: 100%;
-}
-
-body .swiper-container .main-body::-webkit-scrollbar {
-  width: 1vw;
-}
-
-body .swiper-container .main-body::-webkit-scrollbar-track {
-  background: #f6fbfe;
-}
-
-body .swiper-container .main-body::-webkit-scrollbar-thumb {
-  background: #282828;
-  border-radius: 0.5vw;
-  transition: 1s;
-}
-
-body .swiper-container .main-body::-webkit-scrollbar-thumb:hover {
-  width: 1.25vw;
-}
-
-body .swiper-container .main-body .top {
+body .swiper-container .top {
   position: absolute;
   top: 0;
   right: 0;
   z-index: 1;
-  background-color: #f6fbfe;
+  background-color: rgba(246, 251, 254, 0.75);
   /* border-bottom: $dark-grey 0.1rem solid; */
   width: 100%;
   padding: 0.5rem 1rem;
-  box-shadow: rgba(40, 40, 40, 0.5) 0 0.25em;
+  /* box-shadow: rgba($color: $dark-grey, $alpha: 0.5) 0 0.25em; */
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -158,7 +121,7 @@ body .swiper-container .main-body .top {
   /*Mobile version*/
 }
 
-body .swiper-container .main-body .top #hamburger {
+body .swiper-container .top #hamburger {
   display: none;
   cursor: pointer;
   flex-direction: column;
@@ -169,7 +132,7 @@ body .swiper-container .main-body .top #hamburger {
   /* searchIn(swiperStuff.js, sassOuterBarDistance)*/
 }
 
-body .swiper-container .main-body .top #hamburger .bar {
+body .swiper-container .top #hamburger .bar {
   width: 100%;
   height: 0.2em;
   background-color: #282828;
@@ -177,41 +140,41 @@ body .swiper-container .main-body .top #hamburger .bar {
   transition: 500ms;
 }
 
-body .swiper-container .main-body .top #hamburger .bar:nth-child(odd) {
+body .swiper-container .top #hamburger .bar:nth-child(odd) {
   position: relative;
   width: 75%;
 }
 
-body .swiper-container .main-body .top #hamburger .bar:nth-child(1) {
+body .swiper-container .top #hamburger .bar:nth-child(1) {
   top: -0.2em;
 }
 
-body .swiper-container .main-body .top #hamburger .bar:nth-child(3) {
+body .swiper-container .top #hamburger .bar:nth-child(3) {
   top: 0.2em;
 }
 
-body .swiper-container .main-body .top .logo {
+body .swiper-container .top .logo {
   display: flex;
   align-items: center;
 }
 
-body .swiper-container .main-body .top .logo #logo {
+body .swiper-container .top .logo #logo {
   width: 3em;
 }
 
-body .swiper-container .main-body .top .logo #logo-name {
+body .swiper-container .top .logo #logo-name {
   text-align: left;
   font-family: "Rock Salt", cursive;
 }
 
-body .swiper-container .main-body .top nav {
+body .swiper-container .top nav {
   display: flex;
   align-items: center;
   padding: 0.25rem;
   border-radius: 0.5rem;
 }
 
-body .swiper-container .main-body .top nav a {
+body .swiper-container .top nav a {
   display: block;
   color: #282828;
   text-decoration: none;
@@ -220,44 +183,87 @@ body .swiper-container .main-body .top nav a {
   margin: 0 0.5em;
 }
 
-body .swiper-container .main-body .top nav a:hover {
+body .swiper-container .top nav a:hover {
   font-size: 1.5em;
   text-decoration: underline;
 }
 
-body .swiper-container .main-body .top nav .accn-effect {
+body .swiper-container .top nav .accn-effect {
   padding: 0.5em;
   background-color: #f6fbfe;
   border: 0.1em solid black;
   border-radius: 0.5rem;
 }
 
-body .swiper-container .main-body .top nav .accn-effect:last-child {
+body .swiper-container .top nav .accn-effect:last-child {
   color: #f6fbfe;
   background-color: #282828;
   margin-right: 0;
 }
 
-body .swiper-container .main-body .top nav .accn-effect:last-child:hover {
+body .swiper-container .top nav .accn-effect:last-child:hover {
   filter: brightness(1.5);
 }
 
-body .swiper-container .main-body .top nav .accn-effect:hover {
+body .swiper-container .top nav .accn-effect:hover {
   text-decoration: none;
   font-size: 1.25em;
 }
 
 @media only screen and (max-width: 720px) {
-  body .swiper-container .main-body .top #hamburger {
+  body .swiper-container .top #hamburger {
     display: flex;
   }
-  body .swiper-container .main-body .top nav {
+  body .swiper-container .top nav {
     display: none;
   }
 }
 
-body .swiper-container .main-body .landing {
-  height: 100%;
+body .swiper-container .main-body {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: auto;
+}
+
+body .swiper-container .main-body::-webkit-scrollbar {
+  width: 1.5vw;
+}
+
+body .swiper-container .main-body::-webkit-scrollbar:hover {
+  width: 2vw;
+}
+
+body .swiper-container .main-body::-webkit-scrollbar-track {
+  background: #f6fbfe;
+  transition: 1s;
+}
+
+body .swiper-container .main-body::-webkit-scrollbar-thumb {
+  background: #282828;
+  border-radius: 0.75vw;
+  width: 3vw;
+}
+
+body .swiper-container .main-body main {
+  width: 100%;
+}
+
+body .swiper-container .main-body main .section-name {
+  font-size: large;
+  font-family: "Rock Salt", cursive;
+  font-size: 3rem;
+  width: auto;
+  text-align: left;
+  padding-left: 1rem;
+}
+
+body .swiper-container .main-body main #parrots {
+  width: 100%;
+}
+
+body .swiper-container .main-body main .landing {
+  height: 100vh;
   width: 100%;
   background-image: url("./images/background-dog.jpg");
   background-color: #f6fbfe;
@@ -268,7 +274,7 @@ body .swiper-container .main-body .landing {
   background-size: cover;
 }
 
-body .swiper-container .main-body .landing .fader {
+body .swiper-container .main-body main .landing .fader {
   height: 100%;
   width: 100%;
   background: #020024;
@@ -279,7 +285,7 @@ body .swiper-container .main-body .landing .fader {
   z-index: 0;
 }
 
-body .swiper-container .main-body .landing .landing-action {
+body .swiper-container .main-body main .landing .landing-action {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -290,37 +296,37 @@ body .swiper-container .main-body .landing .landing-action {
   align-items: center;
 }
 
-body .swiper-container .main-body .landing .landing-action .action-message {
+body .swiper-container .main-body main .landing .landing-action .action-message {
   font-size: 3em;
   font-weight: bolder;
   text-align: center;
 }
 
-body .swiper-container .main-body .landing .landing-action .links {
+body .swiper-container .main-body main .landing .landing-action .links {
   width: 100%;
 }
 
-body .swiper-container .main-body .landing .landing-action .links i {
+body .swiper-container .main-body main .landing .landing-action .links i {
   font-size: 2.75em;
   transition: 500ms;
   margin: 0 0.5em;
 }
 
-body .swiper-container .main-body .landing .landing-action .links i:hover {
+body .swiper-container .main-body main .landing .landing-action .links i:hover {
   font-size: 3.25em;
   filter: brightness(1.25);
 }
 
 @media only screen and (max-width: 720px) {
-  body .swiper-container .main-body .landing .landing-action .action-message {
+  body .swiper-container .main-body main .landing .landing-action .action-message {
     font-size: 2em;
   }
-  body .swiper-container .main-body .landing .landing-action .links {
+  body .swiper-container .main-body main .landing .landing-action .links {
     font-size: 1rem;
   }
 }
 
-body .swiper-container .main-body .shop {
+body .swiper-container .main-body main .shop {
   width: 100%;
   position: relative;
   display: flex;
@@ -329,7 +335,7 @@ body .swiper-container .main-body .shop {
   flex-direction: column;
 }
 
-body .swiper-container .main-body .shop .main-stuff {
+body .swiper-container .main-body main .shop .main-stuff {
   width: 100%;
   padding: 1rem;
   flex-grow: 1;
@@ -337,7 +343,7 @@ body .swiper-container .main-body .shop .main-stuff {
   align-items: center;
 }
 
-body .swiper-container .main-body .shop .main-stuff .left {
+body .swiper-container .main-body main .shop .main-stuff .left {
   width: 65%;
   height: 100%;
   display: flex;
@@ -346,16 +352,16 @@ body .swiper-container .main-body .shop .main-stuff .left {
   justify-content: space-between;
 }
 
-body .swiper-container .main-body .shop .main-stuff .left img {
+body .swiper-container .main-body main .shop .main-stuff .left img {
   width: 100%;
 }
 
-body .swiper-container .main-body .shop .main-stuff .left .message {
+body .swiper-container .main-body main .shop .main-stuff .left .message {
   font-size: 1.5em;
   font-weight: bold;
 }
 
-body .swiper-container .main-body .shop .main-stuff .right {
+body .swiper-container .main-body main .shop .main-stuff .right {
   height: 100%;
   width: 35%;
   display: flex;
@@ -363,7 +369,7 @@ body .swiper-container .main-body .shop .main-stuff .right {
   align-items: center;
 }
 
-body .swiper-container .main-body .shop .main-stuff .right #go-to-shop {
+body .swiper-container .main-body main .shop .main-stuff .right #go-to-shop {
   margin-top: 2rem;
   background-color: #282828;
   color: #f6fbfe;
@@ -373,87 +379,87 @@ body .swiper-container .main-body .shop .main-stuff .right #go-to-shop {
   transition: 500ms;
 }
 
-body .swiper-container .main-body .shop .main-stuff .right #go-to-shop span {
+body .swiper-container .main-body main .shop .main-stuff .right #go-to-shop span {
   font-weight: bolder;
 }
 
-body .swiper-container .main-body .shop .main-stuff .right #go-to-shop:hover {
+body .swiper-container .main-body main .shop .main-stuff .right #go-to-shop:hover {
   font-size: 1.75em;
   filter: brightness(1.5);
 }
 
 @media only screen and (max-width: 875px) {
-  body .swiper-container .main-body .shop .section-name {
+  body .swiper-container .main-body main .shop .section-name {
     text-align: center;
   }
-  body .swiper-container .main-body .shop .main-stuff {
+  body .swiper-container .main-body main .shop .main-stuff {
     flex-direction: column;
     padding: 0;
   }
-  body .swiper-container .main-body .shop .main-stuff .left {
+  body .swiper-container .main-body main .shop .main-stuff .left {
     width: 100%;
   }
-  body .swiper-container .main-body .shop .main-stuff .left .message {
+  body .swiper-container .main-body main .shop .main-stuff .left .message {
     display: none;
   }
-  body .swiper-container .main-body .shop .main-stuff .right {
+  body .swiper-container .main-body main .shop .main-stuff .right {
     width: 100%;
     padding: 1rem;
   }
-  body .swiper-container .main-body .shop .main-stuff .right #go-to-shop {
+  body .swiper-container .main-body main .shop .main-stuff .right #go-to-shop {
     margin-top: 1rem;
   }
 }
 
-body .swiper-container .main-body .about {
+body .swiper-container .main-body main .about {
   width: 100%;
 }
 
-body .swiper-container .main-body .about .main-stuff {
+body .swiper-container .main-body main .about .main-stuff {
   width: 100%;
   padding: 1rem;
   text-align: left;
 }
 
-body .swiper-container .main-body .about .main-stuff #goldFish {
+body .swiper-container .main-body main .about .main-stuff #goldFish {
   width: 35%;
   float: right;
   margin: 0 0 0.5rem 0.5rem;
 }
 
-body .swiper-container .main-body .about #goldFishForMobile {
+body .swiper-container .main-body main .about #goldFishForMobile {
   display: none;
 }
 
 @media only screen and (max-width: 875px) {
-  body .swiper-container .main-body .about .section-name {
+  body .swiper-container .main-body main .about .section-name {
     text-align: center;
   }
-  body .swiper-container .main-body .about .main-stuff {
+  body .swiper-container .main-body main .about .main-stuff {
     text-align: center;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
   }
-  body .swiper-container .main-body .about .main-stuff #goldFish {
+  body .swiper-container .main-body main .about .main-stuff #goldFish {
     display: none;
   }
-  body .swiper-container .main-body .about #goldFishForMobile {
+  body .swiper-container .main-body main .about #goldFishForMobile {
     display: block;
     width: 100%;
   }
 }
 
-body .swiper-container .main-body .footer {
+body .swiper-container .main-body main .footer {
   height: auto;
   position: relative;
 }
 
-body .swiper-container .main-body .footer .section-name {
+body .swiper-container .main-body main .footer .section-name {
   margin-bottom: 1rem;
 }
 
-body .swiper-container .main-body .footer .main-stuff {
+body .swiper-container .main-body main .footer .main-stuff {
   background-color: #282828;
   padding: 1rem;
   color: #f6fbfe;
@@ -462,60 +468,60 @@ body .swiper-container .main-body .footer .main-stuff {
   justify-content: space-evenly;
 }
 
-body .swiper-container .main-body .footer .main-stuff .block {
+body .swiper-container .main-body main .footer .main-stuff .block {
   display: flex;
   flex-direction: column;
 }
 
-body .swiper-container .main-body .footer .main-stuff .block .head {
+body .swiper-container .main-body main .footer .main-stuff .block .head {
   font-size: 2rem;
   /* margin-bottom: 0.5rem; */
   text-align: left;
   text-decoration: underline;
 }
 
-body .swiper-container .main-body .footer .main-stuff .block #physical-address {
+body .swiper-container .main-body main .footer .main-stuff .block #physical-address {
   text-align: left;
 }
 
-body .swiper-container .main-body .footer .main-stuff .block .content a {
+body .swiper-container .main-body main .footer .main-stuff .block .content a {
   color: #f6fbfe;
   display: block;
   margin: 0.75rem 0 0.75rem 0;
   width: 100%;
 }
 
-body .swiper-container .main-body .footer .main-stuff .block .content a .icon-and-details {
+body .swiper-container .main-body main .footer .main-stuff .block .content a .icon-and-details {
   display: flex;
   justify-content: flex-start;
 }
 
-body .swiper-container .main-body .footer .main-stuff .block .content a .icon-and-details .icon {
+body .swiper-container .main-body main .footer .main-stuff .block .content a .icon-and-details .icon {
   margin-right: 0.5rem;
 }
 
 @media only screen and (max-width: 875px) {
-  body .swiper-container .main-body .footer .section-name {
+  body .swiper-container .main-body main .footer .section-name {
     text-align: center;
   }
-  body .swiper-container .main-body .footer .main-stuff {
+  body .swiper-container .main-body main .footer .main-stuff {
     flex-direction: column;
     align-items: center;
   }
-  body .swiper-container .main-body .footer .main-stuff .block {
+  body .swiper-container .main-body main .footer .main-stuff .block {
     align-items: center;
     margin-bottom: 1rem;
   }
-  body .swiper-container .main-body .footer .main-stuff .block #physical-address a {
+  body .swiper-container .main-body main .footer .main-stuff .block #physical-address a {
     text-align: center;
   }
-  body .swiper-container .main-body .footer .main-stuff .block .content {
+  body .swiper-container .main-body main .footer .main-stuff .block .content {
     text-align: center;
   }
-  body .swiper-container .main-body .footer .main-stuff .block .content a {
+  body .swiper-container .main-body main .footer .main-stuff .block .content a {
     width: auto;
   }
-  body .swiper-container .main-body .footer .main-stuff .block .content a .icon-and-details {
+  body .swiper-container .main-body main .footer .main-stuff .block .content a .icon-and-details {
     justify-content: center;
   }
 }

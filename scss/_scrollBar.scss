@@ -1,0 +1,17 @@
+$scroll-width: 1.5vw;
+&::-webkit-scrollbar {
+  width: $scroll-width;
+  &:hover {
+    width: 2vw;
+  }
+}
+
+&::-webkit-scrollbar-track {
+  background: $background-color;
+  transition: 1s;
+}
+&::-webkit-scrollbar-thumb {
+  background: $dark-grey;
+  border-radius: $scroll-width/2;
+  width: 3vw;
+}
