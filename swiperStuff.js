@@ -48,6 +48,7 @@ var swiper = new Swiper('.swiper-container', {
         const onMainPage = swiper.activeIndex === 1 ? true : false;
         if (onMainPage) {
           hamBurger.addEventListener('click', openMenu, true);
+          
           bar1.style.transform = 'rotate(0deg)';
           bar3.style.transform = 'rotate(0deg)';
           setTimeout(() => {

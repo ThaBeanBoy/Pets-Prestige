@@ -1,10 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Rock+Salt&display=swap");
 * {
-  margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  user-select: none;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 * a {
@@ -41,8 +45,12 @@ body .swiper-container .menu {
 }
 
 body .swiper-container .menu .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0.5rem 0.75rem;
   background-color: #282828;
 }
@@ -55,11 +63,19 @@ body .swiper-container .menu .links {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 body .swiper-container .menu .links a {
@@ -90,10 +106,18 @@ body .swiper-container .menu .links .accn-tings a:last-child {
 body .swiper-container .menu .socials {
   position: absolute;
   bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   width: 100%;
   margin-bottom: 1rem;
   font-size: 1.5rem;
@@ -114,19 +138,34 @@ body .swiper-container .top {
   width: 100%;
   padding: 0.5rem 1rem;
   /* box-shadow: rgba($color: $dark-grey, $alpha: 0.5) 0 0.25em; */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   /*Mobile version*/
 }
 
 body .swiper-container .top #hamburger {
   display: none;
   cursor: pointer;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 10vw;
+  -webkit-transition: 500ms;
   transition: 500ms;
   /* searchIn(swiperStuff.js, sassBarHeight) */
   /* searchIn(swiperStuff.js, sassOuterBarDistance)*/
@@ -137,6 +176,7 @@ body .swiper-container .top #hamburger .bar {
   height: 0.2em;
   background-color: #282828;
   border-radius: 0.25em;
+  -webkit-transition: 500ms;
   transition: 500ms;
 }
 
@@ -154,8 +194,12 @@ body .swiper-container .top #hamburger .bar:nth-child(3) {
 }
 
 body .swiper-container .top .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .swiper-container .top .logo #logo {
@@ -168,8 +212,12 @@ body .swiper-container .top .logo #logo-name {
 }
 
 body .swiper-container .top nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0.25rem;
   border-radius: 0.5rem;
 }
@@ -178,6 +226,7 @@ body .swiper-container .top nav a {
   display: block;
   color: #282828;
   text-decoration: none;
+  -webkit-transition: 500ms;
   transition: 500ms;
   font-size: 1em;
   margin: 0 0.5em;
@@ -202,7 +251,8 @@ body .swiper-container .top nav .accn-effect:last-child {
 }
 
 body .swiper-container .top nav .accn-effect:last-child:hover {
-  filter: brightness(1.5);
+  -webkit-filter: brightness(1.5);
+          filter: brightness(1.5);
 }
 
 body .swiper-container .top nav .accn-effect:hover {
@@ -212,6 +262,8 @@ body .swiper-container .top nav .accn-effect:hover {
 
 @media only screen and (max-width: 720px) {
   body .swiper-container .top #hamburger {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
   body .swiper-container .top nav {
@@ -236,6 +288,7 @@ body .swiper-container .main-body::-webkit-scrollbar:hover {
 
 body .swiper-container .main-body::-webkit-scrollbar-track {
   background: #f6fbfe;
+  -webkit-transition: 1s;
   transition: 1s;
 }
 
@@ -265,7 +318,7 @@ body .swiper-container .main-body main #parrots {
 body .swiper-container .main-body main .landing {
   height: 100vh;
   width: 100%;
-  background-image: url("./images/background-dog.jpg");
+  background-image: url("../images/background-dog.jpg");
   background-color: #f6fbfe;
   background-position: center;
   /* Center the image */
@@ -278,6 +331,7 @@ body .swiper-container .main-body main .landing .fader {
   height: 100%;
   width: 100%;
   background: #020024;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(2, 0, 36, 0)), color-stop(50%, rgba(9, 9, 121, 0)), to(#f6fbfe));
   background: linear-gradient(180deg, rgba(2, 0, 36, 0) 0%, rgba(9, 9, 121, 0) 50%, #f6fbfe 100%);
   position: absolute;
   top: 0;
@@ -289,11 +343,19 @@ body .swiper-container .main-body main .landing .landing-action {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .swiper-container .main-body main .landing .landing-action .action-message {
@@ -308,13 +370,15 @@ body .swiper-container .main-body main .landing .landing-action .links {
 
 body .swiper-container .main-body main .landing .landing-action .links i {
   font-size: 2.75em;
+  -webkit-transition: 500ms;
   transition: 500ms;
   margin: 0 0.5em;
 }
 
 body .swiper-container .main-body main .landing .landing-action .links i:hover {
   font-size: 3.25em;
-  filter: brightness(1.25);
+  -webkit-filter: brightness(1.25);
+          filter: brightness(1.25);
 }
 
 @media only screen and (max-width: 720px) {
@@ -329,27 +393,51 @@ body .swiper-container .main-body main .landing .landing-action .links i:hover {
 body .swiper-container .main-body main .shop {
   width: 100%;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: right;
-  justify-content: center;
-  flex-direction: column;
+  -webkit-box-align: right;
+      -ms-flex-align: right;
+          align-items: right;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 body .swiper-container .main-body main .shop .main-stuff {
   width: 100%;
   padding: 1rem;
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .swiper-container .main-body main .shop .main-stuff .left {
   width: 65%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 body .swiper-container .main-body main .shop .main-stuff .left img {
@@ -364,9 +452,16 @@ body .swiper-container .main-body main .shop .main-stuff .left .message {
 body .swiper-container .main-body main .shop .main-stuff .right {
   height: 100%;
   width: 35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .swiper-container .main-body main .shop .main-stuff .right #go-to-shop {
@@ -376,6 +471,7 @@ body .swiper-container .main-body main .shop .main-stuff .right #go-to-shop {
   padding: 0.5rem;
   border-radius: 0.25em;
   font-size: 1.5em;
+  -webkit-transition: 500ms;
   transition: 500ms;
 }
 
@@ -385,7 +481,8 @@ body .swiper-container .main-body main .shop .main-stuff .right #go-to-shop span
 
 body .swiper-container .main-body main .shop .main-stuff .right #go-to-shop:hover {
   font-size: 1.75em;
-  filter: brightness(1.5);
+  -webkit-filter: brightness(1.5);
+          filter: brightness(1.5);
 }
 
 @media only screen and (max-width: 875px) {
@@ -393,7 +490,10 @@ body .swiper-container .main-body main .shop .main-stuff .right #go-to-shop:hove
     text-align: center;
   }
   body .swiper-container .main-body main .shop .main-stuff {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     padding: 0;
   }
   body .swiper-container .main-body main .shop .main-stuff .left {
@@ -437,9 +537,16 @@ body .swiper-container .main-body main .about #goldFishForMobile {
   }
   body .swiper-container .main-body main .about .main-stuff {
     text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   body .swiper-container .main-body main .about .main-stuff #goldFish {
     display: none;
@@ -463,14 +570,26 @@ body .swiper-container .main-body main .footer .main-stuff {
   background-color: #282828;
   padding: 1rem;
   color: #f6fbfe;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 body .swiper-container .main-body main .footer .main-stuff .block {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 body .swiper-container .main-body main .footer .main-stuff .block .head {
@@ -492,8 +611,12 @@ body .swiper-container .main-body main .footer .main-stuff .block .content a {
 }
 
 body .swiper-container .main-body main .footer .main-stuff .block .content a .icon-and-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 body .swiper-container .main-body main .footer .main-stuff .block .content a .icon-and-details .icon {
@@ -505,11 +628,18 @@ body .swiper-container .main-body main .footer .main-stuff .block .content a .ic
     text-align: center;
   }
   body .swiper-container .main-body main .footer .main-stuff {
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   body .swiper-container .main-body main .footer .main-stuff .block {
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-bottom: 1rem;
   }
   body .swiper-container .main-body main .footer .main-stuff .block #physical-address a {
@@ -522,6 +652,16 @@ body .swiper-container .main-body main .footer .main-stuff .block .content a .ic
     width: auto;
   }
   body .swiper-container .main-body main .footer .main-stuff .block .content a .icon-and-details {
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
+
+.main-text {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  font-size: 2.5rem;
+}
+/*# sourceMappingURL=styles.css.map */

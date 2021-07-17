@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./fontello-4d88d9fa/fontello-4d88d9fa/css/fontello-embedded.css">
+    <link rel="stylesheet" href="./Libraries/Swiper.css" />
+    <link rel="stylesheet" href="./IndexStuff/styles.css">
+    <link rel="stylesheet" href="./barbaStuff.css">
+    <title>Pets Prestige</title>
+</head>
+<body>
+    <div class="loading-screen"></div>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide menu">
+                <div class="top">
+                    <img src="./svg/logoInvert.svg" alt="logo">
+                </div>
+
+                <div class="links">
+                    <a href="">Home</a>
+                    <a href="">Shop</a>
+                    <a href="">About</a>
+                    <a href="">Contact</a>
+                    <div class="accn-tings">
+                        <a href="">Login</a>
+                        <a href="">Sign Up</a>
+                    </div>
+                </div>
+
+                <div class="socials">
+                    <a href=""><i class="icon-twitter"></i></a>
+                    <a href=""><i class="icon-facebook"></i></a>
+                    <a href=""><i class="icon-instagram"></i></a>
+                    <a href=""><i class="icon-mail"></i></a>
+                    <a href=""><i class="icon-location"></i></a>
+                    <a href=""><i class="icon-phone-circled"></i></a>
+                </div>
+            </div>
+
+            <article data-barba="wrapper" class="swiper-slide main-body">
+                <div class="top">
+                    <div id="hamburger" data-state="burgered">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                
+                    <a href="">
+                        <div class="logo">
+                            <img id="logo" src="./svg/logo.svg" alt="logo ">
+                            <h5 id="logo-name">Pet's<br>Prestige</h5>
+                        </div>
+                    </a>
+                
+                    <nav>
+                        <a href="./index.html">Home</a>
+                        <a href="">Shop</a>
+                        <a href="">About</a>
+                        <a href="">Contact</a>
+                        <a href="" class="accn-effect">Log In</a>
+                        <a href="" class="accn-effect">Sign Up</a>
+                    </nav>
+                </div>
+
+                <main data-barba="container" data-barba-namespace="SideMun" class="transition-fade">
+                    <span class="main-text">Yo</span>
+                </main>
+            </article>
+        </div>
+    </div>
+</body>
+<script src="./Libraries/Barba.js"></script>
+<script src="./Libraries/GSAP.js"></script>
+<script src="./Libraries/Swiper.js"></script>
+<script src="./barbaStuff.js"></script>
+<script src="./swiperStuff.js"></script>
+<script>
+    //Entering animation
+    // const loadingScreen = document.querySelector('.loading-screen');
+    gsap.to(loadingScreen, {
+        duration: 0.5,
+        height: 0
+    });
+</script>
+</html>
