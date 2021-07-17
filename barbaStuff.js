@@ -21,6 +21,8 @@ barba.init({
         },
 
         async enter(data){
+            console.log(data.current)
+
             await gsap.to(loadingScreen, {
                 delay: 0.5,
                 height: 0
