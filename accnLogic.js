@@ -6,8 +6,9 @@ const navSignup = document.querySelectorAll('.accn-effect')[1];
 
 
 navLogin.addEventListener('click', ()=>{
-    accnSession.setItem('Which', false)
+    accnSession.setItem('Which', false);
 });
-swipeToLogin.addEventListener('click', ()=>{
-    accnSession.setItem('Which', false)
-});
+
+navSignup.addEventListener('click', ()=>{
+    accnSession.setItem('Which', true);
+})

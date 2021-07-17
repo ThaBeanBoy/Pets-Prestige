@@ -13,6 +13,7 @@ main{
         font-family: $Montserrat-font;
         flex-grow: 1;
         margin: 1rem;
+        max-width: 650px;
 
         .forms{
             border: 0.15rem solid $dark-grey;
@@ -91,6 +92,26 @@ main{
                 &:hover{
                     font-size: 1.25em;
                 }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1024px){
+        height: 100vh;
+        justify-content: center;
+        img{
+            display: none;
+        }
+
+        .right-box{
+            /* position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);*/
+
+            .other-options{
+                display: flex;
+                flex-direction: column;
             }
         }
     }
