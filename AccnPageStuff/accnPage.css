@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Rock+Salt&display=swap");
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main img {
+  height: 100vh;
+}
+
+main .right-box {
+  font-family: "Montserrat", sans-serif;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin: 1rem;
+}
+
+main .right-box .forms {
+  border: 0.15rem solid #282828;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  overflow: hidden;
+}
+
+main .right-box .forms form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .right-box .forms form .frm-Description {
+  font-size: 2.5rem;
+  font-family: "Rock Salt", cursive;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+main .right-box .forms form input {
+  margin: 0.75rem 0;
+  width: 90%;
+  font-size: 1.5rem;
+  color: #282828;
+  border: #282828 solid;
+  background-color: #f6fbfe;
+  border-width: 0 0 0.1rem 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+main .right-box .form-selector {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.75rem 0;
+}
+
+main .right-box .form-selector .button {
+  padding: 0.5rem 0.75rem;
+  border: #282828 0.1rem solid;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+main .right-box .form-selector .button:last-child {
+  color: #f6fbfe;
+  background-color: #282828;
+}
+
+main .right-box .form-selector .button:hover {
+  font-size: 1.5em;
+}
+
+main .right-box .other-options {
+  display: -ms-grid;
+  display: grid;
+  gap: 0.5rem;
+  -ms-grid-columns: (minmax(240px, 1fr))[2];
+      grid-template-columns: repeat(2, minmax(240px, 1fr));
+}
+
+main .right-box .other-options .option {
+  border: 0.1rem #282828 solid;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+main .right-box .other-options .option:last-child {
+  color: #f6fbfe;
+  background-color: #282828;
+}
+
+main .right-box .other-options .option:hover {
+  font-size: 1.25em;
+}
+/*# sourceMappingURL=accnPage.css.map */
