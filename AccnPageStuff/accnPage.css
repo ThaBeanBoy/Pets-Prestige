@@ -22,7 +22,6 @@ main .right-box {
       -ms-flex-positive: 1;
           flex-grow: 1;
   margin: 1rem;
-  max-width: 650px;
 }
 
 main .right-box .forms {
@@ -135,10 +134,7 @@ main .right-box .other-options .option:hover {
     display: none;
   }
   main .right-box {
-    /* position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);*/
+    max-width: 650px;
   }
   main .right-box .other-options {
     display: -webkit-box;

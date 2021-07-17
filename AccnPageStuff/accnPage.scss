@@ -13,7 +13,6 @@ main{
         font-family: $Montserrat-font;
         flex-grow: 1;
         margin: 1rem;
-        max-width: 650px;
 
         .forms{
             border: 0.15rem solid $dark-grey;
@@ -104,10 +103,7 @@ main{
         }
 
         .right-box{
-            /* position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);*/
+            max-width: 650px;
 
             .other-options{
                 display: flex;
