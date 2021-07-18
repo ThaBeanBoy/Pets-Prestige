@@ -1,0 +1,27 @@
+USE GSAP FOR ANIMATIONS
+
+-New Inputs
+    -Use of Cleave.js for better inputs
+    -Combine SweetAlert.js in combination of Cleave.js
+
+-Ping for when user checks a task
+
+-Let user hold the 3 dot thing to move their tasks around
+
+-Search thingy
+    -Has to look through all items that shows resemble the users text
+    -Caps don't have to be the same
+    -Space shouldn't matter
+    -Apostrophes can voetsek too
+
+-Editing Info by pressing the 3 dots bar
+    -Use popper.js instead of a whole editors page
+
+
+-Options
+    -Swiper has to be used to travel from home to settings
+    -T/F For pinging for check of a task
+
+-Time options similar to the Do Now app.
+
+-When the user presses back of the phone(PC and mostly Android niggas), the app should revert the last command type deal

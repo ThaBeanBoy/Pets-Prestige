@@ -1,0 +1,225 @@
+.allFather * {
+    user-select: none;
+    position: relative;
+}
+
+.allFather {
+    position: fixed;
+    bottom: 0;
+
+    height: 85%;
+    width: 100%;
+    padding: 1rem 0 6vh 0rem;
+    overflow: scroll;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    list-style-type: none;
+    font-size: 1rem;
+
+    .optBtns {
+    float: right;
+
+    border: 0.1rem solid #001b2e;
+    border-radius: 50%;
+    color: #001b2e;
+    font-size: 1.25rem;
+    }
+
+    ul {
+    padding: 0.5em 0 0 1em;
+    list-style-type: none;
+    }
+
+    .show-off {
+        width: 95%;
+        background-color: #adb6c4;
+        margin-bottom: 0.75em;
+        border: 0.2rem black solid;
+        border-radius: 0.75em;
+        padding: 0.25rem 0 0.25rem 0em;
+
+        word-wrap: break-word;
+
+        .caret {
+            cursor: pointer;
+            position: relative;
+            width: 99.5%;
+            margin-top: 0.5rem;
+            border-width: 0 0 0 0.188rem;
+            border: solid black;
+            padding: 0.4rem;
+            
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            
+            font-size: 1.25em;
+            font-weight: bolder;
+
+            .optBtns {
+                margin-left: auto;
+            }
+
+            &::before {
+                margin-right: 0.1rem;
+
+                display: inline-block;
+
+                transition: 0.5s;
+                transform: rotate(0deg);
+
+                font-family: 'fontello';
+                font-style: normal;
+                font-weight: normal;
+                content: '\e801';
+            }
+        }
+
+        .nested {
+            width: 99.5%;
+            margin-bottom: 0.5rem;
+            border: black solid;
+            border-width: 0 0 0.188rem 0.188rem;
+            border-radius: 0 0 0.5rem 0.5rem;
+            padding: 0rem 0 0.5rem 0.5rem;
+            overflow: hidden;
+
+            li {
+                position: relative;
+
+                width: 99%;
+                margin: 0.5rem 0;
+                border: black solid 0.1rem;
+                border-radius: 0.5rem;
+                padding: 0.4em;
+                
+                transition: 0.5s;
+
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                
+                word-wrap: break-word;
+                font-size: 1em;
+
+                .task-txt {
+                    max-width: 90%;
+                }
+            }
+        }
+
+        [data-state='not-showing'] {
+            margin-bottom: 0.5rem;
+            border-width: 0.1rem 0.1rem 0.188rem 0.188rem;
+            border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+            
+            & + .nested{
+                display: none;
+            }
+        }
+
+        [data-state='showing'] {
+            border-width: 0.1rem 0.1rem 0 0.188rem;
+            border-radius: 0.5rem 0.5rem 0 0;
+
+            &::before {
+                transform: rotate(90deg);
+            }
+
+            & + .nested {
+                display: block;
+                border-right-width: 0.1rem;
+            }
+        }  
+
+        & > .caret {
+            margin: 0;
+        }
+
+        & > .nested, & > .caret {
+            border-width: 0;
+        }
+    }
+
+    .show-off-task {
+        padding: 0.4rem;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        font-size: 1.25em;
+        font-weight: bolder;
+    }
+
+    .optBtns {
+        float: right;
+
+        border: 0.1rem solid #001b2e;
+        border-radius: 50%;
+        color: #001b2e;
+    }
+
+    .options {
+        z-index: 2;
+        
+        position: absolute;
+        right: 15px;
+        top: -20px;
+        
+        width: 100%;
+        height: 0;
+        border-radius: 0.4rem 0.4rem 0 0.4rem;
+        background-color: grey;
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        color: orange;
+        font-size: 1.75rem;
+        background-color: #001b2e;
+
+        .icon-cancel {
+            color: red;
+        }
+    }
+
+    .done {
+        background-color: #09263c;
+        /* text-decoration: line-through; */
+        color: #d9d9d9;
+    
+        .task-txt {
+            text-decoration: line-through;
+        }
+    
+        .optBtns {
+            background-color: orange;
+            color: #09263c;
+        }
+    
+        & + .nested {
+            background-color: #09263c;
+        }
+    
+        & + .nested .caret,
+        & + .nested .nested,
+        & + .nested li {
+            border-color: #d9d9d9;
+        }
+    }
+
+    .show-off.done > .nested,
+    .show-off.done > .caret {
+        border-width: 0;
+    }
+}
