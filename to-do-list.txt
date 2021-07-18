@@ -25,3 +25,9 @@ USE GSAP FOR ANIMATIONS
 -Time options similar to the Do Now app.
 
 -When the user presses back of the phone(PC and mostly Android niggas), the app should revert the last command type deal
+
+-Online accounts and tings
+    -Use Parsley for form validation (Lord knows you suck at it bruuuuuuh, lol what a roast)
+    -User should be able to access that data from any device using their online accounts
+    -Use firebase as the storage and for user validation, NodeJs and making your own servers just takes too much time for this nonsense.
+    -Have access to an online shop of themes and make your own custom theme.
