@@ -1,5 +1,8 @@
 USE GSAP FOR ANIMATIONS
 
+-Editing Info by pressing the 3 dots bar
+    -Use popper.js instead of a whole editors page
+
 -New Inputs for tasks
     -Use of Cleave.js for better inputs
     -Combine SweetAlert.js in combination with Cleave.js
@@ -8,15 +11,13 @@ USE GSAP FOR ANIMATIONS
 
 -Let user hold the 3 dot thing to move their tasks around
 
+-undo option after deleting task (approx 6 seconds)
+
 -Search thingy
     -Has to look through all items that shows resemble the users text
     -Caps don't have to be the same
     -Space shouldn't matter
     -Apostrophes can voetsek too
-
--Editing Info by pressing the 3 dots bar
-    -Use popper.js instead of a whole editors page
-
 
 -Options
     -Swiper has to be used to travel from home to settings

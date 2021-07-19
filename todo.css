@@ -199,12 +199,41 @@ body .allFather .show-off [data-state='showing'] + .nested {
   border-right-width: 0.1rem;
 }
 
+body .allFather .show-off > [data-state='showing'] + .nested {
+  border-width: 0;
+}
+
 body .allFather .show-off > .caret {
   margin: 0;
 }
 
 body .allFather .show-off > .nested, body .allFather .show-off > .caret {
   border-width: 0;
+}
+
+body .allFather .done {
+  background-color: #09263c;
+  /* text-decoration: line-through; */
+  color: #d9d9d9;
+}
+
+body .allFather .done .task-txt {
+  text-decoration: line-through;
+}
+
+body .allFather .done .optBtns {
+  background-color: orange;
+  color: #09263c;
+}
+
+body .allFather .done + .nested {
+  background-color: #09263c;
+}
+
+body .allFather .done + .nested .caret,
+body .allFather .done + .nested .nested,
+body .allFather .done + .nested li {
+  border-color: #d9d9d9;
 }
 
 body .allFather .show-off-task {
@@ -231,6 +260,15 @@ body .allFather .optBtns {
   border: 0.1rem solid #001b2e;
   border-radius: 50%;
   color: #001b2e;
+}
+
+body .allFather .show-off.done > .nested,
+body .allFather .show-off.done > .caret {
+  border-width: 0;
+}
+
+body .allFather .show-off > .nested {
+  border-width: 0;
 }
 
 body .allFather .options {
@@ -262,36 +300,6 @@ body .allFather .options {
 
 body .allFather .options .icon-cancel {
   color: red;
-}
-
-body .allFather .done {
-  background-color: #09263c;
-  /* text-decoration: line-through; */
-  color: #d9d9d9;
-}
-
-body .allFather .done .task-txt {
-  text-decoration: line-through;
-}
-
-body .allFather .done .optBtns {
-  background-color: orange;
-  color: #09263c;
-}
-
-body .allFather .done + .nested {
-  background-color: #09263c;
-}
-
-body .allFather .done + .nested .caret,
-body .allFather .done + .nested .nested,
-body .allFather .done + .nested li {
-  border-color: #d9d9d9;
-}
-
-body .allFather .show-off.done > .nested,
-body .allFather .show-off.done > .caret {
-  border-width: 0;
 }
 
 body .editor {
@@ -595,5 +603,9 @@ body .edit-flow-background {
 
 .draggedClass {
   visibility: hidden;
+}
+
+.show-off > .nested {
+  border-width: 0;
 }
 /*# sourceMappingURL=todo.css.map */
