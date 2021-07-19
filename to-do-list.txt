@@ -1,8 +1,8 @@
 USE GSAP FOR ANIMATIONS
 
--New Inputs
+-New Inputs for tasks
     -Use of Cleave.js for better inputs
-    -Combine SweetAlert.js in combination of Cleave.js
+    -Combine SweetAlert.js in combination with Cleave.js
 
 -Ping for when user checks a task
 
@@ -21,6 +21,8 @@ USE GSAP FOR ANIMATIONS
 -Options
     -Swiper has to be used to travel from home to settings
     -T/F For pinging for check of a task
+    -T/F Have bottom piece or keep below buttons available
+    -Let user put certain amount of seconds until the bottom buttons close
 
 -Time options similar to the Do Now app.
 

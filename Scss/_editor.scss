@@ -1,0 +1,109 @@
+.editor {
+    z-index: 3;
+    
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 0;
+    height: 100%;
+    background-color: #000000ee;
+    overflow-y: hidden;
+  
+    .editor-head {
+      position: absolute;
+      left: 50%;
+      top: 3%;
+      transform: translateX(-50%);
+      
+      width: 90%;
+      padding: 0.25rem;
+      border-radius: 1rem;
+      background-color: #ffefd3;
+      overflow: hidden;
+      
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      text-align: center;
+      color: #001b2e;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    i {
+      overflow: hidden;
+    }
+
+    .side-bar {
+      position: absolute;
+      right: 4%;
+      top: 50%;
+      transform: translateY(-50%);
+      
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+
+      width: 18vw;
+      border-radius: 1rem;
+      padding: 0.25rem;
+      
+      
+      font-weight: bolder;
+    
+      i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 18vw;
+        height: 18vw;
+        background-color: #ffefd3;
+        overflow: hidden;
+
+
+        color: #001b2e;
+        font-size: 2rem;
+      }
+
+      .options {
+        height: 111vw;
+        display: flex;
+        flex-direction: column;
+      
+        i {
+          border: #001b2e solid;
+          border-width: 0.1rem 0;
+        }
+
+        .icon-plus {
+          border-radius: 50% 50% 0 0;
+          border-bottom: #001b2e 0.1rem solid;
+        }
+      
+        .icon-cancel {
+          border-radius: 0 0 50% 50%;
+          color: red;
+          border-top: #001b2e 0.1rem solid;
+        }
+      }
+
+      .taskBar {
+        height: 57.5vw;
+      
+        .icon-minus-squared,
+        .icon-flow-cascade,
+        .icon-minus-squared-alt {
+          height: 0;
+          border-width: 0;
+        }
+      }
+
+      .go-back {
+        margin-top: 0rem;
+        bottom: 0;
+        border-radius: 50%;
+      }
+    }
+  }
