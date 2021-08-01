@@ -8,7 +8,6 @@
   padding: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  z-index: 0;
 }
 
 body {
@@ -124,8 +123,6 @@ body .allFather .show-off .caret .optBtns {
 body .allFather .show-off .caret::before {
   margin-right: 0.1rem;
   display: inline-block;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
   font-family: 'fontello';
@@ -151,8 +148,6 @@ body .allFather .show-off .nested li {
   border: black solid 0.1rem;
   border-radius: 0.5rem;
   padding: 0.4em;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -595,6 +590,22 @@ body .edit-flow-background {
   width: 0%;
   height: 100%;
   background-color: #000000ee;
+}
+
+body .tippy-box[data-theme~='todTheme'] {
+  border: 0.2rem black solid;
+  border-width: 0.2rem 0.2rem 0 0.2rem;
+  border-radius: 0.75rem 0.75rem 0 0;
+  background-color: #adb6c4;
+  z-index: 1000;
+}
+
+body .tippy-box[data-theme~='todTheme'] .icon-trash-empty {
+  color: #f57a62;
+}
+
+body .tippy-box[data-theme~='todTheme'] i {
+  color: black;
 }
 
 .ghostClass {

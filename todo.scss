@@ -8,7 +8,6 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  z-index: 0;
 }
 
 body {
@@ -24,7 +23,7 @@ body {
     @import './Scss/editor';
     @import './Scss/bottomPiece';
     @import './Scss/editFlow';
-
+    @import './Scss/toolTippy.scss';
     
 }
 

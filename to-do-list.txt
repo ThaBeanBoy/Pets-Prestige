@@ -1,36 +1,60 @@
 USE GSAP FOR ANIMATIONS
 
--Editing Info by pressing the 3 dots bar
-    -Use popper.js instead of a whole editors page
+Editing Info by pressing the 3 dots bar
+    Use tippy.js instead of a whole editors page
+    |
+    =>allowHTML allows you to put html elements inside bro, put the HTML inside content
+    =>Remember the arrow option
+    =>Popper has a click trigger
+    =>Tippy has an interactive option which could be used
+    =>
 
--New Inputs for tasks
-    -Use of Cleave.js for better inputs
-    -Combine SweetAlert.js in combination with Cleave.js
+New Inputs for tasks
+    Spots => Search(ctrl + shift + F) prompt and alert
 
--Ping for when user checks a task
+    Notes
+    Use of Cleave.js for better inputs
+    Combine SweetAlert.js in combination with Cleave.js
 
--Let user hold the 3 dot thing to move their tasks around
+    let users put in emojis if they want
 
--undo option after deleting task (approx 6 seconds)
+use GSAP to animate height auto for caret and the rotating thingy
+    ctrl + shift + F find transform: rotate(0deg) and transform: rotate(0deg)
 
--Search thingy
-    -Has to look through all items that shows resemble the users text
-    -Caps don't have to be the same
-    -Space shouldn't matter
-    -Apostrophes can voetsek too
+Ping for when user checks a task
+    Add distinct aadio cues for each possible action (A good amount, nothing to excessive)
 
--Options
-    -Swiper has to be used to travel from home to settings
-    -T/F For pinging for check of a task
-    -T/F Have bottom piece or keep below buttons available
-    -Let user put certain amount of seconds until the bottom buttons close
+Let user hold the 3 dot thing to move their tasks around
 
--Time options similar to the Do Now app.
+undo option after deleting task (approx 6 seconds)
 
--When the user presses back of the phone(PC and mostly Android niggas), the app should revert the last command type deal
+Search thingy
+    Has to look through all items that shows resemble the users text
+    Caps don't have to be the same
+    Space shouldn't matter
+    Apostrophes can voetsek too
 
--Online accounts and tings
-    -Use Parsley for form validation (Lord knows you suck at it bruuuuuuh, lol what a roast)
-    -User should be able to access that data from any device using their online accounts
-    -Use firebase as the storage and for user validation, NodeJs and making your own servers just takes too much time for this nonsense.
-    -Have access to an online shop of themes and make your own custom theme.
+Settings
+    Swiper has to be used to travel from home to settings
+    T/F For pinging for check of a task
+    T/F Have bottom piece or keep below buttons available
+    Let user put certain amount of seconds until the bottom buttons close
+
+Planned to do 
+    select from times of week
+    select from days of a month
+        Every month End
+    Every x days
+    1 timed event
+
+Time options similar to the Do Now app.
+
+When the user presses back of the phone(PC and mostly Android niggas), the app should revert the last command type deal
+
+Online accounts and tings
+    Use Parsley for form validation (Lord knows you suck at it bruuuuuuh, lol what a roast)
+    User should be able to access that data from any device using their online accounts
+    Use firebase as the storage and for user validation, NodeJs and making your own servers just takes too much time for this nonsense.
+    Have access to an online shop of themes and make your own custom theme.
+
+Integrate Google assistant and Siri with the app, atleast do some research on this ting lad...

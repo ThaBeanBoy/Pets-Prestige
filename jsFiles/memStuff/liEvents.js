@@ -15,6 +15,8 @@ const liClick = () => {
         ? event.target.parentNode
         : event.target;
   
+      // console.log(clicked)
+
       //Getting the path from the mem
       const path = findAdress(clicked, mem);
       path.checkout.forEach((n) => {

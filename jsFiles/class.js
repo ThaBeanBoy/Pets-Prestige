@@ -12,6 +12,7 @@ class todS {
       const newTitle = prompt('New title', this.title);
   
       //checking if the input string is proper
+      //! Check for other elements that are named the same thing
       if (newTitle != '' && newTitle != null) {
         this.title = newTitle;
         return this;

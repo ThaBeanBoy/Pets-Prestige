@@ -14,6 +14,7 @@ const closeFlowBox = () => {
     task = task.parentNode;
     $(task).attr('data-state', 'showing');
     task = findAdress(task, mem);
+    
   
     //Initialising the editor
     editorInitialisation(task);
