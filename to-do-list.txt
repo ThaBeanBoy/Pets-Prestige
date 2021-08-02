@@ -40,6 +40,16 @@ Settings
     T/F Have bottom piece or keep below buttons available
     Let user put certain amount of seconds until the bottom buttons close
 
+Improve animation, especicially after refresh(), make something like an animation bin.
+The animation bin will log the change pre-refresh, re-add those changes then remove them...
+    -When user edits title
+    -When user adds a child
+    -For deleted tasks
+    -When user del all
+    -When user del all done
+    -For tippies that are left open after refreshing
+
+
 Planned to do 
     select from times of week
     select from days of a month

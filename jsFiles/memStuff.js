@@ -40,7 +40,7 @@ const displayAll = () => {
   // $('.optBtns').click(vertOptions);
   let elemSelected;
   $('.optBtns').click(()=>{
-    debugger
+    // debugger
     if(!JSON.parse(sessionStorage.getItem('ThersOpenTippy'))){
       // debugger
       const transitionTime = 0.25;
@@ -110,6 +110,7 @@ const displayAll = () => {
 
             duration: transitionTime,
             onComplete: ()=>{
+              sessionStorage.setItem('ThersOpenTippy', false)
               refresh();
             }
           })
@@ -123,30 +124,116 @@ const displayAll = () => {
 
 
       const editorBtns = {
-        editTitle: ()=>{
+        closeTippy(){
+          gsap.to(childDOM, {
+            marginTop: `${InitalMarginTop}px`,
+  
+            duration: transitionTime,
+            onComplete: ()=>{
+              sessionStorage.setItem('ThersOpenTippy', false)
+              refresh();
+            }
+          })
+        },
+
+        editTitle(){
           accessedTod.path.editTitle();
           editOPts.hide
-          refresh();
+          
+          this.closeTippy();
         },
 
         addChild(){
+          //getting the new task's title
+          const input = prompt('A new task??').trim();
+      
+          //Adding newtask to memory
+          accessedTod.path.addChild(input);
+      
+          //Flipping all parents state's
+          accessedTod.checkout.forEach((n) => {
+            n.flip();
+          });
 
+          this.closeTippy();
         },
 
         delete(){
+          const youSure = confirm('Are you sure?');
+          if(youSure){
+            // Deleting from the root array
+            if (accessedTod.checkout.length == 1) {
+              mem = mem.filter((n) => n.title != accessedTod.path.title);
+            }
+            // Deleting a sub child
+            else {
+              //Getting the parent
+              const parent = accessedTod.checkout[1];
+        
+              //Deleting selected task/caret from it's parent
+              parent.deleteChild(accessedTod.path.title);
+        
+              //Flipping all parents state's
+              accessedTod.checkout.forEach((n) => {
+                if (n.children != 0) {
+                  n.flip();
+                }
+              });
+            }
 
+            this.closeTippy();
+          }
         },
 
         delAllDone(){
-
+          let allDones = accessedTod.path.children.filter((n) => n.state);
+  
+          //if there are any done tasks
+          if (allDones.length > 0) {
+            //firing confirmation prompt
+            const confirmation = confirm('Are You Sure? All done tasks and carets will be deleted');
+      
+            //If there users wants to continue...
+            if (confirmation) {
+              //Delete all done method
+              accessedTod.path.delAllDone();
+      
+              //Refreshing the allFather
+              this.closeTippy();
+            }
+            //If the users is REMORSEFUL for such vile actions
+            else {
+              alert('Action Cancelled');
+            }
+          }
+          //If there aren't any done tasks
+          else {
+            alert('There are no finished Task and/or Carets');
+          }
         },
 
         delAll(){
-
+          //Confirmation prompt fired
+          const confirmation = confirm('Are You Sure? Everything will be deleted...');
+      
+          //If user wants to continue...
+          if (confirmation) {
+            accessedTod.path.delAll();
+      
+            this.closeTippy();
+          }
+          //If users cancels the action
+          else {
+            alert('Action cancelled');
+          }
         }
       }
 
-      $('.tippy-box i').click(()=>{editorBtns.editTitle()})
+      $('.tippy-box .icon-pencil').click(()=>{editorBtns.editTitle()})
+      $('.tippy-box .icon-minus-squared').click(()=>{editorBtns.delAll()})
+      $('.tippy-box .icon-plus').click(()=>{editorBtns.addChild()})
+      $('.tippy-box .icon-trash-empty').click(()=>{editorBtns.delete()})
+      $('.tippy-box .icon-minus-squared-alt').click(()=>{editorBtns.delAllDone()})
 
       console.log(childDOM)
       gsap.to(childDOM, {
