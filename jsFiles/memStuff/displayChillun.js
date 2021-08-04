@@ -9,23 +9,6 @@ const closeFlowBox = () => {
     $('.edit-flow-body').empty();
   };
   
-  function displayOptions(task) {
-    // Finding the adress
-    task = task.parentNode;
-    $(task).attr('data-state', 'showing');
-    task = findAdress(task, mem);
-    
-  
-    //Initialising the editor
-    editorInitialisation(task);
-  
-    //Setting up the required events
-    editorEvents(task);
-  
-    // Open up shop and shut'em down
-    $('.editor').css('width', '100%');
-  }
-  
   //Used to create .nested elements
   const displayChillun = (ul, kinders) => {
     //Setting up new ul element

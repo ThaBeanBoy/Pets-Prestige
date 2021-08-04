@@ -17,9 +17,4 @@ const caretClick = () => {
     refresh();
   }
 };
-
-const vertOptions = () => {
-  //Display editor...
-  displayOptions(event.target);
-};
   

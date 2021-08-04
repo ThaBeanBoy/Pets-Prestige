@@ -37,7 +37,6 @@ const displayAll = () => {
   //Setting up events for caret
   $('.caret').click(caretClick);
   //Setting up events for options buttons
-  // $('.optBtns').click(vertOptions);
   $('.optBtns').click(()=>{
     // debugger
     if(!JSON.parse(sessionStorage.getItem('ThersOpenTippy'))){
@@ -71,7 +70,13 @@ const displayAll = () => {
       const child = $(childDOM)
 
       const InitalMarginTop = parseFloat(child.css('margin-top'));
-      // console.log(parseFloat(child.css('padding-top')))
+      console.table({
+        'padding originall': parseFloat(child.css('padding-top')),
+        'offset topping': (
+          parseFloat(child.css('padding-top')) +
+          ((IsAShowOff && !$(event.target.parentElement).is('li'))? parseFloat($(event.target.parentElement).css('padding-top')): 0) 
+        ) 
+      })
       editOPts.setProps({
         //* Setting the right buttons for editing 
         content: `
