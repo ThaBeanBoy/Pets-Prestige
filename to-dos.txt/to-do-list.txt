@@ -1,9 +1,6 @@
 USE GSAP FOR ANIMATIONS
 
 Editing Info by pressing the 3 dots bar
-    (prblm) When pressing adding for new child, that code should be in class.js,
-        they call this, "Encapsulation and abstraction"
-    (Prblm) After an edit, when user presses 3dot, there's a bug
     (Prblm) offset of the tippy box is of for sub children of lis
 
 Let user hold the 3 dot thing to move their tasks around

@@ -593,7 +593,7 @@ body .edit-flow-background {
 }
 
 body .tippy-box[data-theme~='todTheme'] {
-  border: 0.2rem black solid;
+  border: black solid;
   border-width: 0.2rem 0.2rem 0 0.2rem;
   border-radius: 0.75rem 0.75rem 0 0;
   background-color: #adb6c4;

@@ -44,20 +44,22 @@ const displayAll = () => {
       // * Setting transition speed for GSAP animation and setting default attributes for tippy
       const transitionTime = 0.25;
       const editOPts = tippy(event.target, {
-        // zIndex: '999',
+        zIndex: '999',
         theme: 'todTheme',
         arrow: false,
         allowHTML: true,
-        //! Make sure the offset automatically adjust to the padding
         placement: 'top',
   
         trigger: 'click',
         interactive: true,
+        appendTo: event.target.parentElement.parentElement,
 
         onShow(inst){
           sessionStorage.setItem('ThersOpenTippy', true);
         },
       });
+
+      $(event.target).click(()=>{editOPts.hide()})
 
       //* Finding the clicked element's address
       const accessedTod = findAdress(event.target.parentElement.firstChild);
@@ -70,13 +72,6 @@ const displayAll = () => {
       const child = $(childDOM)
 
       const InitalMarginTop = parseFloat(child.css('margin-top'));
-      console.table({
-        'padding originall': parseFloat(child.css('padding-top')),
-        'offset topping': (
-          parseFloat(child.css('padding-top')) +
-          ((IsAShowOff && !$(event.target.parentElement).is('li'))? parseFloat($(event.target.parentElement).css('padding-top')): 0) 
-        ) 
-      })
       editOPts.setProps({
         //* Setting the right buttons for editing 
         content: `
@@ -89,22 +84,14 @@ const displayAll = () => {
           </h1>
         `,
 
-        //* Setting the offset
-        offset: [0, (
-          parseFloat(child.css('padding-top')) +
-          ((IsAShowOff && !$(event.target.parentElement).is('li'))? parseFloat($(event.target.parentElement).css('padding-top')): 0) 
-        )],
-
         //* Setting the right theme Pt 2
         theme: 'todTheme',
-
-        // hideOnClick: 'toggle',
 
         placement: "top-end",
 
         animateFill: true,
 
-        hideOnClick: true,
+        hideOnClick: false,
 
         onClickOutside(inst, ev){
           console.log('out side click')
@@ -230,7 +217,6 @@ const displayAll = () => {
       $('.tippy-box .icon-trash-empty').click(()=>{editorBtns.delete()})
       $('.tippy-box .icon-minus-squared-alt').click(()=>{editorBtns.delAllDone()})
 
-      // console.log(childDOM)
       gsap.to(childDOM, {
         marginTop: `${childMarginTop + tippyHeight}px`,
       
@@ -242,9 +228,9 @@ const displayAll = () => {
           const borderWidth = parseFloat(child.css('border-top-width'));
           $('.tippy-box').css('background-color', child.css('background-color'))
             .css('border-width', `${borderWidth} ${borderWidth} 0 ${borderWidth}`)
-              .css('border-color', `${child.css('border-top-color')}`);
+              .css('border-color', `${child.css('border-top-color')}`)
           $('.tippy-box .tippy-content h1 i').css('color', child.css('color'));
-          $('.tippy-box .tippy-content h1 .icon-trash-empty').css('color', '#f57a62')
+          $('.tippy-box .tippy-content h1 .icon-trash-empty').css('color', '#f57a62');
 
           // console.log($('.tippy-box').children())
         },
