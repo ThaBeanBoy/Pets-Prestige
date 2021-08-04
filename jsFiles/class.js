@@ -23,7 +23,10 @@ class todS {
     }
   
     // Method for adding to the objects children
-    addChild(newTask) {
+    addChild() {
+      //getting the new task's title
+      const newTask = prompt('A new task??').trim();
+
       //Checking if the input string is proper
       if (newTask != '' && newTask != null) {
         //Meant to check if there's a child with the exact same title

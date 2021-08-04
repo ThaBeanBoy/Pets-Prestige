@@ -1,15 +1,14 @@
 USE GSAP FOR ANIMATIONS
 
 Editing Info by pressing the 3 dots bar
-    Use tippy.js instead of a whole editors page
-    |
-    =>allowHTML allows you to put html elements inside bro, put the HTML inside content
-    =>Remember the arrow option
-    =>Popper has a click trigger
-    =>Tippy has an interactive option which could be used
-    =>
+    (prblm) When pressing adding for new child, that code should be in class.js,
+        they call this, "Encapsulation and abstraction"
+    (Prblm) After an edit, when user presses 3dot, there's a bug
+    (Prblm) offset of the tippy box is of for sub children of lis
 
-New Inputs for tasks
+Let user hold the 3 dot thing to move their tasks around
+
+New Inputs for tasks (Use SweetAlert.js)
     Spots => Search(ctrl + shift + F) prompt and alert
 
     Notes
@@ -24,11 +23,11 @@ use GSAP to animate height auto for caret and the rotating thingy
 Ping for when user checks a task
     Add distinct aadio cues for each possible action (A good amount, nothing to excessive)
 
-Let user hold the 3 dot thing to move their tasks around
-
 undo option after deleting task (approx 6 seconds)
 
 Search thingy
+    Use this technique from designcourse https://www.youtube.com/watch?v=RYUuGgC_IY0
+
     Has to look through all items that shows resemble the users text
     Caps don't have to be the same
     Space shouldn't matter
@@ -50,21 +49,4 @@ The animation bin will log the change pre-refresh, re-add those changes then rem
     -For tippies that are left open after refreshing
 
 
-Planned to do 
-    select from times of week
-    select from days of a month
-        Every month End
-    Every x days
-    1 timed event
-
-Time options similar to the Do Now app.
-
 When the user presses back of the phone(PC and mostly Android niggas), the app should revert the last command type deal
-
-Online accounts and tings
-    Use Parsley for form validation (Lord knows you suck at it bruuuuuuh, lol what a roast)
-    User should be able to access that data from any device using their online accounts
-    Use firebase as the storage and for user validation, NodeJs and making your own servers just takes too much time for this nonsense.
-    Have access to an online shop of themes and make your own custom theme.
-
-Integrate Google assistant and Siri with the app, atleast do some research on this ting lad...

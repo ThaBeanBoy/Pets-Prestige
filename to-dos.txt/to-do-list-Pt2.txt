@@ -1,0 +1,20 @@
+Planned to do 
+    select from times of week
+    select from days of a month
+        Every month End
+    Every x days
+    1 timed event
+
+Time options similar to the Do Now app.
+
+Online accounts and tings
+    Use Parsley for form validation (Lord knows you suck at it bruuuuuuh, lol what a roast)
+    User should be able to access that data from any device using their online accounts
+    Use firebase as the storage and for user validation, NodeJs and making your own servers just takes too much time for this nonsense.
+    Have access to an online shop of themes and make your own custom theme.
+
+Social type of thing where people can interact with one another
+    D3.js can be used to see information.
+    Bruh, we might data mine to see patterns in human behavior to improve the likleyhood for people to do their tasks.
+
+Integrate Google assistant and Siri with the app, atleast do some research on this ting lad...

@@ -1,5 +1,5 @@
 const refresh = () => {
-  //Saving any changes made during the pre-refresh()
+  console.log('Refreshed')
   sessionStorage.setItem('ThersOpenTippy', false);
   memConversions.save_memory_changes();
 

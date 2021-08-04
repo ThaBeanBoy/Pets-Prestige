@@ -38,14 +38,14 @@ const displayAll = () => {
   $('.caret').click(caretClick);
   //Setting up events for options buttons
   // $('.optBtns').click(vertOptions);
-  let elemSelected;
   $('.optBtns').click(()=>{
     // debugger
     if(!JSON.parse(sessionStorage.getItem('ThersOpenTippy'))){
       // debugger
+      // * Setting transition speed for GSAP animation and setting default attributes for tippy
       const transitionTime = 0.25;
       const editOPts = tippy(event.target, {
-        zIndex: '999',
+        // zIndex: '999',
         theme: 'todTheme',
         arrow: false,
         allowHTML: true,
@@ -57,13 +57,13 @@ const displayAll = () => {
 
         onShow(inst){
           sessionStorage.setItem('ThersOpenTippy', true);
-        }
+        },
       });
 
       //* Finding the clicked element's address
       const accessedTod = findAdress(event.target.parentElement.firstChild);
 
-      //* Increase the height of the nested if the selected element is a 1st child
+      //* Increase the height of the nested
       const IsAShowOff = $(event.target.parentElement.parentElement).hasClass('show-off') || $(event.target.parentElement).hasClass('show-off');
       const childDOM = IsAShowOff ? (
         $(event.target.parentElement).is('li') ? event.target.parentElement : event.target.parentElement.parentElement
@@ -71,7 +71,7 @@ const displayAll = () => {
       const child = $(childDOM)
 
       const InitalMarginTop = parseFloat(child.css('margin-top'));
-      console.log(parseFloat(child.css('padding-top')))
+      // console.log(parseFloat(child.css('padding-top')))
       editOPts.setProps({
         //* Setting the right buttons for editing 
         content: `
@@ -99,18 +99,19 @@ const displayAll = () => {
 
         animateFill: true,
 
-        hideOnClick: false,
+        hideOnClick: true,
 
         onClickOutside(inst, ev){
           console.log('out side click')
-          editOPts.hide()
+          editOPts.hide();
 
           gsap.to(childDOM, {
             marginTop: `${InitalMarginTop}px`,
 
             duration: transitionTime,
             onComplete: ()=>{
-              sessionStorage.setItem('ThersOpenTippy', false)
+              // sessionStorage.setItem('ThersOpenTippy', false)
+              editOPts.destroy();
               refresh();
             }
           })
@@ -124,38 +125,24 @@ const displayAll = () => {
 
 
       const editorBtns = {
-        closeTippy(){
-          gsap.to(childDOM, {
-            marginTop: `${InitalMarginTop}px`,
-  
-            duration: transitionTime,
-            onComplete: ()=>{
-              sessionStorage.setItem('ThersOpenTippy', false)
-              refresh();
-            }
-          })
-        },
-
         editTitle(){
           accessedTod.path.editTitle();
-          editOPts.hide
-          
-          this.closeTippy();
+          editOPts.hide();
+          editOPts.destroy();
+          refresh();
         },
 
         addChild(){
-          //getting the new task's title
-          const input = prompt('A new task??').trim();
-      
           //Adding newtask to memory
-          accessedTod.path.addChild(input);
+          accessedTod.path.addChild();
       
           //Flipping all parents state's
           accessedTod.checkout.forEach((n) => {
             n.flip();
           });
 
-          this.closeTippy();
+          editOPts.destroy();
+          refresh();
         },
 
         delete(){
@@ -181,7 +168,8 @@ const displayAll = () => {
               });
             }
 
-            this.closeTippy();
+            editOPts.destroy();
+            refresh();
           }
         },
 
@@ -199,7 +187,8 @@ const displayAll = () => {
               accessedTod.path.delAllDone();
       
               //Refreshing the allFather
-              this.closeTippy();
+              editOPts.destroy();
+              refresh();
             }
             //If the users is REMORSEFUL for such vile actions
             else {
@@ -220,7 +209,8 @@ const displayAll = () => {
           if (confirmation) {
             accessedTod.path.delAll();
       
-            this.closeTippy();
+            editOPts.destroy();
+            refresh();
           }
           //If users cancels the action
           else {
@@ -235,7 +225,7 @@ const displayAll = () => {
       $('.tippy-box .icon-trash-empty').click(()=>{editorBtns.delete()})
       $('.tippy-box .icon-minus-squared-alt').click(()=>{editorBtns.delAllDone()})
 
-      console.log(childDOM)
+      // console.log(childDOM)
       gsap.to(childDOM, {
         marginTop: `${childMarginTop + tippyHeight}px`,
       
@@ -251,7 +241,7 @@ const displayAll = () => {
           $('.tippy-box .tippy-content h1 i').css('color', child.css('color'));
           $('.tippy-box .tippy-content h1 .icon-trash-empty').css('color', '#f57a62')
 
-          console.log($('.tippy-box').children())
+          // console.log($('.tippy-box').children())
         },
       })
     }
