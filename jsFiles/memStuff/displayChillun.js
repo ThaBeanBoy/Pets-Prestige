@@ -1,4 +1,9 @@
-
+{/* <li class="show-off ${done}">
+  <div class="caret ${done}" data-state="${showing}">
+    <span class="task-txt">${n.title}</span>
+    <span class="icon-ellipsis-vert optBtns"></span>
+  </div>
+</li> */}
   
 //Used to create .nested elements
 const displayChillun = (ul, kinders) => {
@@ -16,14 +21,22 @@ const displayChillun = (ul, kinders) => {
 
       //Craeting the div
       const div = $(
-        `<li class="caret ${done}" data-state="${show}"><span class="task-txt">${n.title}</span><span class="icon-ellipsis-vert optBtns"></span></li>`
+        `<li class="${done} li-caret">
+          <div class="caret ${done}" data-state="${show}">
+            <span class="task-txt">${n.title}</span>
+            <span class="icon-ellipsis-vert optBtns"></span>
+          </div>
+        </li>`
       );
+
+      div.css('padding', '0');
+      div.css('border-width', '0');
+      div.css('margin', '0');
+
+      displayChillun(div, n.children)
 
       //Appending the div to the newUl
       newUl.append(div);
-
-      //Recursive function
-      displayChillun(newUl, n.children);
     }
     //If n is just a task
     else {
