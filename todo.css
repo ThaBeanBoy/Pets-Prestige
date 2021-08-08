@@ -141,7 +141,7 @@ body .allFather .show-off .nested {
   overflow: hidden;
 }
 
-body .allFather .show-off .nested li {
+body .allFather .show-off .nested li:not(.caret) {
   position: relative;
   width: 99%;
   margin: 0.5rem 0;
@@ -165,7 +165,7 @@ body .allFather .show-off .nested li {
   font-size: 1em;
 }
 
-body .allFather .show-off .nested li .task-txt {
+body .allFather .show-off .nested li:not(.caret) .task-txt {
   max-width: 90%;
 }
 
@@ -597,7 +597,6 @@ body .tippy-box[data-theme~='todTheme'] {
   border-width: 0.2rem 0.2rem 0 0.2rem;
   border-radius: 0.75rem 0.75rem 0 0;
   background-color: #adb6c4;
-  z-index: 1000;
 }
 
 body .tippy-box[data-theme~='todTheme'] .icon-trash-empty {
