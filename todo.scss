@@ -1,30 +1,29 @@
 @font-face {
-    font-family: MontAlt;
-    src: url(./font/MontserratAlternates-Regular.ttf);
+  font-family: MontAlt;
+  src: url(./font/MontserratAlternates-Regular.ttf);
 }
 
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
-    background-color: #ffefd3;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffefd3;
 
-    font-family: MontAlt, sans-serif;
-    font-size: 1em;
+  font-family: MontAlt, sans-serif;
+  font-size: 1em;
 
-    @import './Scss/top';
-    @import './Scss/allFather';
-    @import './Scss/editor';
-    @import './Scss/bottomPiece';
-    @import './Scss/editFlow';
-    @import './Scss/toolTippy';
-    
+  @import "./Scss/top";
+  @import "./Scss/allFather";
+  @import "./Scss/editor";
+  @import "./Scss/bottomPiece";
+  @import "./Scss/editFlow";
+  @import "./Scss/toolTippy";
 }
 
 .ghostClass {
@@ -35,7 +34,7 @@ body {
   visibility: hidden;
 }
 
-.show-off > .nested{
+.show-off > .nested {
   border-width: 0;
 }
 /*# sourceMappingURL=todo.css.map */

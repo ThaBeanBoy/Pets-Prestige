@@ -1,5 +1,4 @@
 const refresh = () => {
-  console.log('Refreshed')
   sessionStorage.setItem('ThersOpenTippy', false);
   memConversions.save_memory_changes();
 
@@ -86,4 +85,3 @@ const refresh = () => {
 
   displayAll();
 };
-  

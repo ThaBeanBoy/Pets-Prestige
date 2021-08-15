@@ -1,17 +1,19 @@
+// import { todS, caretTod } from './class.js';
+
 //Setting up the local storage for memory
 if (localStorage.getItem('allTods') == null) {
-    localStorage.setItem('allTods', JSON.stringify([]));
-  }
+  localStorage.setItem('allTods', JSON.stringify([]));
+}
 //Setting up storage for scrollPos
 if (localStorage.getItem('scrollPos') == null) {
   localStorage.setItem('scrollPos', '0');
 }
 
 //Setting if there is a editOpts (tippy) open
-if(sessionStorage.getItem('scrollPos') == null){
+if (sessionStorage.getItem('scrollPos') == null) {
   sessionStorage.setItem('ThersOpenTippy', false);
 }
-  
+
 let internalMem = JSON.parse(localStorage.getItem('allTods'));
 
 const memConversions = {
@@ -19,9 +21,11 @@ const memConversions = {
   internal_to_useable_memory: function (arr) {
     let useArr = [];
     arr.forEach((n) => {
-      useArr.push(
-        new todS(n[0], this.internal_to_useable_memory(n[1]), n[2], n[3])
-      );
+      const hasChildren = n[1].length >= 1;
+      const pushed = hasChildren
+        ? new caretTod(n[0], this.internal_to_useable_memory(n[1]), n[2], n[3])
+        : new todS(n[0], [], n[2], n[3]);
+      useArr.push(pushed);
     });
 
     return useArr;

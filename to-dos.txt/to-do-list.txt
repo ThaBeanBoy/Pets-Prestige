@@ -1,7 +1,8 @@
 USE GSAP FOR ANIMATIONS
 
 Editing Info by pressing the 3 dots bar
-    (Prblm) offset of the tippy box is of for sub children of lis
+    (Prblm) offset of the tippy box is of for sub children of list
+    (Prblm) Z-index of sub tasks:not(task show-off)
 
 Let user hold the 3 dot thing to move their tasks around
 
@@ -13,6 +14,8 @@ New Inputs for tasks (Use SweetAlert.js)
     Combine SweetAlert.js in combination with Cleave.js
 
     let users put in emojis if they want
+
+Imports and exports and simplify the color codes in the SASS files
 
 use GSAP to animate height auto for caret and the rotating thingy
     ctrl + shift + F find transform: rotate(0deg) and transform: rotate(0deg)

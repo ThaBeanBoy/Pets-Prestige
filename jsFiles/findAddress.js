@@ -1,17 +1,21 @@
 const findAdress = (ev) => {
-  //debugger;
+  // console.log(ev);
   //Estabrishing address in object form
   let parentsObj = $(ev).parents('.nested').prev('.caret').not('.nested');
   delete parentsObj.prevObject;
   delete parentsObj.length;
+  // console.log(parentsObj);
 
   //Estabrishing da adress in Array
   let arr = Object.values(parentsObj).reverse();
-  arr.push($(ev));
+  arr.push(ev);
+  // console.log(arr);
   let adress = [];
   arr.forEach((n) => {
-    adress.push(`${$(n).text()}`);
+    console.log($(n));
+    adress.push(`${$(n).children()[0].textContent}`);
   });
+  console.log(adress);
 
   //Getting to the Estabrished adress in the memory
   let checkoutCodon = [];
@@ -33,4 +37,3 @@ const findAdress = (ev) => {
 
   return { path: path, checkout: checkout };
 };
-  
