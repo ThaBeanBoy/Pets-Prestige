@@ -12,10 +12,10 @@ const findAdress = (ev) => {
   // console.log(arr);
   let adress = [];
   arr.forEach((n) => {
-    console.log($(n));
+    // console.log($(n));
     adress.push(`${$(n).children()[0].textContent}`);
   });
-  console.log(adress);
+  // console.log(adress);
 
   //Getting to the Estabrished adress in the memory
   let checkoutCodon = [];

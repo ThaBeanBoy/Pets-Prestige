@@ -57,6 +57,10 @@ class todS {
     return this;
   }
 
+  addObj(obj, index) {
+    this.children.splice(index, 0, obj);
+  }
+
   // Check if the this is a caret or a task
   isCaret() {
     if (this.children.length == 0) {
