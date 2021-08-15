@@ -1,10 +1,12 @@
-{/* <li class="show-off ${done}">
+{
+  /* <li class="show-off ${done}">
   <div class="caret ${done}" data-state="${showing}">
     <span class="task-txt">${n.title}</span>
     <span class="icon-ellipsis-vert optBtns"></span>
   </div>
-</li> */}
-  
+</li> */
+}
+
 //Used to create .nested elements
 const displayChillun = (ul, kinders) => {
   //Setting up new ul element
@@ -21,19 +23,14 @@ const displayChillun = (ul, kinders) => {
 
       //Craeting the div
       const div = $(
-        `<li class="${done} li-caret">
-          <div class="caret ${done}" data-state="${show}">
-            <span class="task-txt">${n.title}</span>
-            <span class="icon-ellipsis-vert optBtns"></span>
-          </div>
-        </li>`
+        `<li class="${done} li-caret"><div class="caret ${done}" data-state="${show}"><span class="task-txt">${n.title}</span><span class="icon-ellipsis-vert optBtns"></span></div></li>`
       );
 
       div.css('padding', '0');
       div.css('border-width', '0');
       div.css('margin', '0');
 
-      displayChillun(div, n.children)
+      displayChillun(div, n.children);
 
       //Appending the div to the newUl
       newUl.append(div);

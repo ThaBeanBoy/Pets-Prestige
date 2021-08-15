@@ -21,11 +21,9 @@ const memConversions = {
   internal_to_useable_memory: function (arr) {
     let useArr = [];
     arr.forEach((n) => {
-      const hasChildren = n[1].length >= 1;
-      const pushed = hasChildren
-        ? new caretTod(n[0], this.internal_to_useable_memory(n[1]), n[2], n[3])
-        : new todS(n[0], [], n[2], n[3]);
-      useArr.push(pushed);
+      useArr.push(
+        new todS(n[0], this.internal_to_useable_memory(n[1]), n[2], n[3])
+      );
     });
 
     return useArr;

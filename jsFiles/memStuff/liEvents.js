@@ -19,7 +19,7 @@ const liClick = () => {
       : event.target;
 
     //Getting the path from the mem
-    const path = findAdress(clicked, mem);
+    const path = findAdress(clicked);
     path.checkout.forEach((n) => {
       //Fliping all Parents
       n.flip();

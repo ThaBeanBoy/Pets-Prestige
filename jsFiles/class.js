@@ -95,21 +95,6 @@ class todS {
       return this;
     }
   }
-}
-
-class caretTod extends todS {
-  // Deletes all the done tasks/carets
-  delAllDone() {
-    //Filters out the done tasks
-    this.children = this.children.filter((n) => !n.state);
-    return this;
-  }
-
-  //Method to delete all done children (state = true)
-  delAll() {
-    this.children = [];
-    return this;
-  }
 
   //Method to flip the showing property
   flipShowing() {
@@ -135,6 +120,19 @@ class caretTod extends todS {
       this.showing = true;
     }
 
+    return this;
+  }
+
+  // Deletes all the done tasks/carets
+  delAllDone() {
+    //Filters out the done tasks
+    this.children = this.children.filter((n) => !n.state);
+    return this;
+  }
+
+  //Method to delete all done children (state = true)
+  delAll() {
+    this.children = [];
     return this;
   }
 }

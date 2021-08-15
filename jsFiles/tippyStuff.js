@@ -21,7 +21,8 @@ const openTippy = (target) => {
     });
 
     //* Finding the clicked element's address
-    const accessedTod = findAdress($(target.parentElement).children('span')[0]);
+    console.log(target.parentElement);
+    const accessedTod = findAdress(target.parentElement);
 
     //* Increase the height of the nested
     const IsAShowOff =
