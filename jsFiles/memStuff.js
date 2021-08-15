@@ -12,7 +12,7 @@ const displayAll = () => {
       const showing = n.showing ? 'showing' : 'not-showing';
 
       //Making the proper endli
-      endLi = `<li class="show-off ${done}"><div class="caret ${done}" data-state="${showing}"><span class="task-txt">${n.title}</span><span class="icon-ellipsis-vert optBtns"></span></div></li>`;
+      endLi = `<li class="show-off ${done} caret-show-off"><div class="caret ${done}" data-state="${showing}"><span class="task-txt">${n.title}</span><span class="icon-ellipsis-vert optBtns"></span></div></li>`;
 
       //Attaching the endLi to the allFather
       allFather.prepend(endLi);
@@ -63,9 +63,9 @@ const displayAll = () => {
     });
 
     //* Hold event
-    event.on('Hold', () => {
-      console.log('Hold');
-    });
+    // event.on('Hold', () => {
+    //   InstSortable();
+    // });
   });
 
   //Mirage: "Hey hey guys, check it out, check it out. I set the li events. It's not a bamboozle this time."

@@ -1,84 +1,84 @@
 .allFather * {
-    user-select: none;
-    position: relative;
+  user-select: none;
+  position: relative;
 }
 
 .allFather {
-    position: fixed;
-    bottom: 0;
+  position: fixed;
+  bottom: 0;
 
-    height: 85%;
-    width: 100%;
-    padding: 1rem 0 6vh 0rem;
-    overflow: scroll;
+  height: 85%;
+  width: 100%;
+  padding: 1rem 0 6vh 0rem;
+  overflow: scroll;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    list-style-type: none;
-    font-size: 1rem;
+  list-style-type: none;
+  font-size: 1rem;
 
-    .optBtns {
+  .optBtns {
     float: right;
 
     border: 0.1rem solid #001b2e;
     border-radius: 50%;
     color: #001b2e;
     font-size: 1.25rem;
-    }
+  }
 
-    ul {
+  ul {
     padding: 0.5em 0 0 1em;
     list-style-type: none;
+  }
+
+  @import './allFther/showOff';
+  @import './allFther/doneTasksNCarets';
+  @import './allFther/showOffTask';
+
+  .optBtns {
+    float: right;
+
+    border: 0.1rem solid #001b2e;
+    border-radius: 50%;
+    color: #001b2e;
+  }
+
+  & > li.done > .nested,
+  & > li.done > .caret {
+    border-width: 0;
+  }
+
+  & > li > .nested {
+    border-width: 0;
+  }
+
+  // For the editing and adding tasks thingy...
+  .options {
+    z-index: 2;
+
+    position: absolute;
+    right: 15px;
+    top: -20px;
+
+    width: 100%;
+    height: 0;
+    border-radius: 0.4rem 0.4rem 0 0.4rem;
+    background-color: grey;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    color: orange;
+    font-size: 1.75rem;
+    background-color: #001b2e;
+
+    .icon-cancel {
+      color: red;
     }
-
-    @import './allFther/showOff';
-    @import './allFther/doneTasksNCarets';
-    @import './allFther/showOffTask';
-
-    .optBtns {
-        float: right;
-
-        border: 0.1rem solid #001b2e;
-        border-radius: 50%;
-        color: #001b2e;
-    }
-
-    .show-off.done > .nested,
-    .show-off.done > .caret {
-        border-width: 0;
-    }
-
-    .show-off > .nested{
-        border-width: 0;
-    }
-
-    // For the editing and adding tasks thingy...
-    .options {
-        z-index: 2;
-        
-        position: absolute;
-        right: 15px;
-        top: -20px;
-        
-        width: 100%;
-        height: 0;
-        border-radius: 0.4rem 0.4rem 0 0.4rem;
-        background-color: grey;
-        overflow: hidden;
-  
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-  
-        color: orange;
-        font-size: 1.75rem;
-        background-color: #001b2e;
-  
-        .icon-cancel {
-            color: red;
-        }
-    }
+  }
 }

@@ -18,23 +18,16 @@ body {
   font-family: MontAlt, sans-serif;
   font-size: 1em;
 
-  @import "./Scss/top";
-  @import "./Scss/allFather";
-  @import "./Scss/editor";
-  @import "./Scss/bottomPiece";
-  @import "./Scss/editFlow";
-  @import "./Scss/toolTippy";
+  @import './Scss/top';
+  @import './Scss/allFather';
+  @import './Scss/editor';
+  @import './Scss/bottomPiece';
+  @import './Scss/editFlow';
+  @import './Scss/toolTippy';
+  // @import './Scss/sortableStuff';
 }
-
-.ghostClass {
-  border: 0.15em red solid;
-}
-
-.draggedClass {
-  visibility: hidden;
-}
-
-.show-off > .nested {
+@import './Scss/sortableStuff';
+.allFather > li > .nested {
   border-width: 0;
 }
 /*# sourceMappingURL=todo.css.map */

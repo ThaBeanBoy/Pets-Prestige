@@ -70,7 +70,7 @@ body .allFather ul {
   list-style-type: none;
 }
 
-body .allFather .show-off {
+body .allFather > li {
   width: 95%;
   background-color: #adb6c4;
   margin-bottom: 0.75em;
@@ -80,7 +80,7 @@ body .allFather .show-off {
   word-wrap: break-word;
 }
 
-body .allFather .show-off .caret {
+body .allFather > li .caret {
   cursor: pointer;
   position: relative;
   width: 99.5%;
@@ -96,21 +96,21 @@ body .allFather .show-off .caret {
   font-weight: bolder;
 }
 
-body .allFather .show-off .caret .optBtns {
+body .allFather > li .caret .optBtns {
   margin-left: auto;
 }
 
-body .allFather .show-off .caret::before {
+body .allFather > li .caret::before {
   margin-right: 0.1rem;
   display: inline-block;
   transform: rotate(0deg);
-  font-family: "fontello";
+  font-family: 'fontello';
   font-style: normal;
   font-weight: normal;
-  content: "\e801";
+  content: '\e801';
 }
 
-body .allFather .show-off .nested {
+body .allFather > li .nested {
   width: 99.5%;
   margin-bottom: 0.5rem;
   border: black solid;
@@ -120,7 +120,7 @@ body .allFather .show-off .nested {
   overflow: hidden;
 }
 
-body .allFather .show-off .nested li:not(.caret):not(.li-caret) {
+body .allFather > li .nested li:not(.caret):not(.li-caret) {
   position: relative;
   width: 99%;
   margin: 0.5rem 0;
@@ -135,44 +135,44 @@ body .allFather .show-off .nested li:not(.caret):not(.li-caret) {
   font-size: 1em;
 }
 
-body .allFather .show-off .nested li:not(.caret):not(.li-caret) .task-txt {
+body .allFather > li .nested li:not(.caret):not(.li-caret) .task-txt {
   max-width: 90%;
 }
 
-body .allFather .show-off [data-state="not-showing"] {
+body .allFather > li [data-state='not-showing'] {
   margin-bottom: 0.5rem;
   border-width: 0.1rem 0.1rem 0.188rem 0.188rem;
   border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
-body .allFather .show-off [data-state="not-showing"] + .nested {
+body .allFather > li [data-state='not-showing'] + .nested {
   display: none;
 }
 
-body .allFather .show-off [data-state="showing"] {
+body .allFather > li [data-state='showing'] {
   border-width: 0.1rem 0.1rem 0 0.188rem;
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
-body .allFather .show-off [data-state="showing"]::before {
+body .allFather > li [data-state='showing']::before {
   transform: rotate(90deg);
 }
 
-body .allFather .show-off [data-state="showing"] + .nested {
+body .allFather > li [data-state='showing'] + .nested {
   display: block;
   border-right-width: 0.1rem;
 }
 
-body .allFather .show-off > [data-state="showing"] + .nested {
+body .allFather > li > [data-state='showing'] + .nested {
   border-width: 0;
 }
 
-body .allFather .show-off > .caret {
+body .allFather > li > .caret {
   margin: 0;
 }
 
-body .allFather .show-off > .nested,
-body .allFather .show-off > .caret {
+body .allFather > li > .nested,
+body .allFather > li > .caret {
   border-width: 0;
 }
 
@@ -201,7 +201,7 @@ body .allFather .done:not(.li-caret) + .nested li:not(.li-caret) {
   border-color: #d9d9d9;
 }
 
-body .allFather .show-off-task {
+body .allFather > li:not(.caret-show-off) {
   padding: 0.4rem;
   display: flex;
   flex-direction: row;
@@ -218,12 +218,12 @@ body .allFather .optBtns {
   color: #001b2e;
 }
 
-body .allFather .show-off.done > .nested,
-body .allFather .show-off.done > .caret {
+body .allFather > li.done > .nested,
+body .allFather > li.done > .caret {
   border-width: 0;
 }
 
-body .allFather .show-off > .nested {
+body .allFather > li > .nested {
   border-width: 0;
 }
 
@@ -488,12 +488,13 @@ body .tippy-box[data-theme~='todTheme'] i {
 
 .ghostClass {
   border: 0.15em red solid;
+  background-color: orange;
 }
 
 .draggedClass {
   visibility: hidden;
 }
 
-.show-off > .nested {
+.allFather > li > .nested {
   border-width: 0;
 }
