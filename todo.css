@@ -176,28 +176,28 @@ body .allFather .show-off > .caret {
   border-width: 0;
 }
 
-body .allFather .done {
+body .allFather .done:not(.li-caret) {
   background-color: #09263c;
   /* text-decoration: line-through; */
   color: #d9d9d9;
 }
 
-body .allFather .done .task-txt {
+body .allFather .done:not(.li-caret) .task-txt {
   text-decoration: line-through;
 }
 
-body .allFather .done .optBtns {
+body .allFather .done:not(.li-caret) .optBtns {
   background-color: orange;
   color: #09263c;
 }
 
-body .allFather .done + .nested {
+body .allFather .done:not(.li-caret) + .nested {
   background-color: #09263c;
 }
 
-body .allFather .done + .nested .caret,
-body .allFather .done + .nested .nested,
-body .allFather .done + .nested li:not(.li-caret) {
+body .allFather .done:not(.li-caret) + .nested .caret,
+body .allFather .done:not(.li-caret) + .nested .nested,
+body .allFather .done:not(.li-caret) + .nested li:not(.li-caret) {
   border-color: #d9d9d9;
 }
 
