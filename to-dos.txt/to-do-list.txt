@@ -5,6 +5,7 @@ Editing Info by pressing the 3 dots bar
     (Prblm) Z-index of sub tasks:not(task show-off)
 
 Let user hold the 3 dot thing to move their tasks around
+    (prblm) Destroying the sortable thing will be difficult fam
 
 New Inputs for tasks (Use SweetAlert.js)
     Spots => Search(ctrl + shift + F) prompt and alert

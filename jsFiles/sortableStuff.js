@@ -13,26 +13,68 @@ for (let i = 0; i < allSortableNested.length; i++) {
     delay: 750,
     fallbackOnBody: true,
     swapThreshold: 0.65,
+    handle: '.optBtns',
 
     // ghostClass: 'ghostClass', // Class name for the drop placeholder
-    chosenClass: 'ghostClass', // Class name for the chosen item
+    // chosenClass: 'ghostClass', // Class name for the chosen item
     dragClass: 'draggedClass',
 
     onChoose(evt) {
-      $(evt.item).css('background-color', 'orange');
-      // console.log(findAdress(evt.item));
+      // console.log($(evt.item).children());
+
+      $(evt.item).hasClass('li-caret')
+        ? [...evt.item.children].forEach((n) =>
+            $(n).css('background-color', 'orange')
+          )
+        : $(evt.item).css('background-color', 'orange');
+
+      console.log(evt.item.firstChild);
+      // $(evt.item).hasClass('li-caret')
+      //   ?
+      //   : {};
+      $(evt.item.firstChild).attr('data-state', 'not-showing');
+
       selectedObj = findAdress(evt.item);
     },
 
     onMove(evt) {
-      // console.log(evt.to);
-      // console.log(evt.dragged);
-      if (
-        $(evt.to).hasClass('allFather') &&
-        $(evt.dragged).hasClass('li-caret')
-      ) {
-        console.log(evt.dragged);
-        $(evt.dragged).attr('style', '').addClass('caret-show-off');
+      /*
+       * Helps with the transition of element from 1 nested to another,
+       * Since the styling changes so much and the styling is heavily reliant on classes
+       */
+
+      const tooRoot = $(evt.to).hasClass('allFather');
+
+      if (!tooRoot && selectedObj.path.isCaret()) {
+        //caret: root -> sub task position
+        $(evt.dragged)
+          .removeClass('show-off')
+          .removeClass('caret-show-off')
+          .addClass('li-caret')
+          .css('background-color', '#adb6c4');
+
+        console.log(evt.dragged.children);
+        [...evt.dragged.children].forEach((n) =>
+          $(n).css('background-color', 'orange')
+        );
+      } else if (tooRoot && selectedObj.path.isCaret()) {
+        //caret: sub task position -> root
+        $(evt.dragged)
+          .addClass('show-off')
+          .addClass('caret-show-off')
+          .removeClass('li-caret')
+          .attr('style', '')
+          .css('background-color', 'orange');
+      } else if (!tooRoot && !selectedObj.path.isCaret()) {
+        //task : root -> sub task position
+        $(evt.dragged).removeClass('show-off').removeClass('show-off-task');
+        $(evt.dragged.firstChild).css('margin-bottom', '0');
+      } else {
+        //task : sub task position -> root
+        /* 
+        add classes show-off show-off-task
+        */
+        $(evt.dragged).addClass('show-off').addClass('show-off-task');
       }
     },
 
@@ -82,11 +124,20 @@ for (let i = 0; i < allSortableNested.length; i++) {
         NewParent.addObj(selectedObj.path, evt.newIndex);
       }
 
-      refresh();
+      //update the old parents
+      selectedObj.checkout.forEach((n, indx) => {
+        indx > 0 ? n.flip() : {};
+      });
+
+      //update the new parents
+      findAdress(evt.item).checkout.forEach((n, indx) => {
+        indx > 0 ? n.flip() : {};
+      });
+      // refresh();
     },
 
     onUnchoose(evt) {
-      refresh();
+      // refresh();
       // console.log('yup');
     },
   });
