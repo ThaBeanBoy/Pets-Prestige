@@ -42,6 +42,8 @@ const displayChillun = (ul, kinders) => {
         `<li class="${done}"><span class="task-txt">${n.title}</span><span class="icon-ellipsis-vert optBtns"></span></li>`
       );
 
+      // displayChillun(li, []);
+
       //Appending the new li to the newUl
       newUl.append(li);
     }

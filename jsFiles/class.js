@@ -1,10 +1,31 @@
+// Random Code generator
+function makeid(length) {
+  var result = '';
+  var characters =
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  var charactersLength = characters.length;
+  for (var i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
+
 //A tod setup
 class todS {
-  constructor(title, children = [], state = false, showing = false) {
+  constructor(
+    title,
+    children = [],
+    state = false,
+    showing = false,
+    createdWhen = '',
+    id = ''
+  ) {
     this.title = title;
     this.children = children;
     this.state = state;
     this.showing = showing; //this value doesn't matter for tasks, only for carets
+    this.createdWhen = createdWhen;
+    this.id = id;
   }
 
   //Method for editing the title

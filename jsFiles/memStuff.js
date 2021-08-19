@@ -26,6 +26,8 @@ const displayAll = () => {
       //Making the proper endli
       endLi = `<li class="show-off show-off-task ${done}"><span class="task-txt">${n.title}</span><span class="icon-ellipsis-vert optBtns"></span></li>`;
 
+      // displayChillun(sisterWife, []);
+
       //Attaching the endLi to the allFather
       allFather.prepend(endLi);
     }
@@ -76,5 +78,7 @@ const displayAll = () => {
       // console.log('li click');
       liClick();
     });
+
+  InitiateSortable();
 };
 displayAll();

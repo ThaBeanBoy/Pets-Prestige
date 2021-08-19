@@ -2,6 +2,10 @@ const refresh = () => {
   sessionStorage.setItem('ThersOpenTippy', false);
   memConversions.save_memory_changes();
 
+  sortInsts.forEach((n) => {
+    n.destroy();
+  });
+
   //emptying the allfather
   $('.allFather').empty();
 
@@ -84,4 +88,6 @@ const refresh = () => {
   });
 
   displayAll();
+
+  console.log('refreshed');
 };
