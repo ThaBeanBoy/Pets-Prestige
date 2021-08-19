@@ -10,9 +10,6 @@ Editing Info by pressing the 3 dots bar
     (Prblm) offset of the tippy box is of for sub children of list
     (Prblm) Z-index of sub tasks:not(task show-off)
 
-Let user hold the 3 dot thing to move their tasks around
-    Check if the new parent has the same child
-
 New Inputs for tasks (Use SweetAlert.js)
     Spots => Search(ctrl + shift + F) prompt and alert
 
