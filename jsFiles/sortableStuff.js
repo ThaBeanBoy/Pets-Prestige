@@ -1,6 +1,7 @@
 let sortInsts = [];
 const InitiateSortable = () => {
-  let selectedObj;
+  let selectedCheckout, selectedObj, oldParent;
+
   //* Sortabilisng all nested elements
   let allSortableNested = [
     document.querySelector('.allFather'),
@@ -11,7 +12,6 @@ const InitiateSortable = () => {
     old: '',
     new: '',
   };
-  let anyChanges;
 
   for (let i = 0; i < allSortableNested.length; i++) {
     let sort = new Sortable(allSortableNested[i], {
@@ -27,15 +27,12 @@ const InitiateSortable = () => {
       dragClass: 'draggedClass',
 
       onChoose(evt) {
-        selectedObj = findAdress(evt.item);
+        selectedCheckout = findAdress(evt.item).checkout;
+        selectedObj = findAdress(evt.item).path;
+        oldParent = selectedCheckout[1];
 
         $(evt.item).attr('data-state', 'not-showing');
-        // console.log(selectedObj.path.isCaret());
-        selectedObj.path.isCaret()
-          ? [...evt.item.children].forEach((n) =>
-              $(n).css('background-color', 'orange')
-            )
-          : $(evt.item).css('background-color', 'orange');
+        $(evt.item).css('background-color', 'orange');
         $(evt.item.firstChild).attr('data-state', 'not-showing');
 
         // console.log(selectedObj);
@@ -52,7 +49,7 @@ const InitiateSortable = () => {
         const tooRoot = $(evt.to).hasClass('allFather');
 
         // console.log(movingCaret);
-        if (!tooRoot && selectedObj.path.isCaret()) {
+        if (!tooRoot && selectedObj.isCaret()) {
           //caret: root -> sub task position
           $(evt.dragged)
             .removeClass('show-off')
@@ -62,7 +59,7 @@ const InitiateSortable = () => {
           [...evt.dragged.children].forEach((n) =>
             $(n).css('background-color', 'orange')
           );
-        } else if (tooRoot && selectedObj.path.isCaret()) {
+        } else if (tooRoot && selectedObj.isCaret()) {
           //caret: sub task position -> root
           $(evt.dragged)
             .addClass('show-off')
@@ -70,7 +67,7 @@ const InitiateSortable = () => {
             .removeClass('li-caret')
             .attr('style', '')
             .css('background-color', 'orange');
-        } else if (!tooRoot && !selectedObj.path.isCaret()) {
+        } else if (!tooRoot && !selectedObj.isCaret()) {
           //task : root -> sub task position
           $(evt.dragged).removeClass('show-off').removeClass('show-off-task');
           $(evt.dragged.firstChild).css('margin-bottom', '0');
@@ -85,63 +82,89 @@ const InitiateSortable = () => {
           .querySelector('.allFather')
           .innerHTML.replace('draggable="false"', '');
         NoChanges = sortArrays.old === sortArrays.new;
-        if (anyChanges) {
-          sort.destroy();
-          refresh();
-          console.log('Changes');
-        }
 
-        // console.log(sortArrays.old);
-        // console.log(sortArrays.new);
-        // console.log(NoChanges);
+        if (NoChanges) {
+          refresh();
+        }
       },
 
       onEnd(evt) {
         //Sortable logic (add the object to specified location)
-        // console.log(evt);
         const NewParent = findAdress(evt.item).checkout[1];
-        if (NewParent === undefined) {
-          //*The object is moved to the root array
-          //Cut away object
-          if (selectedObj.checkout.length === 1) {
-            // From root
-            mem = mem.filter((n) => n.title != selectedObj.path.title);
-          } else {
-            // Was a sub task;
-            selectedObj.checkout[1].deleteChild(selectedObj.path.title);
-          }
-          //Place object
-          let indxArr = [];
-          for (let i = 0; i < mem.length + 1; i++) {
-            indxArr.unshift(i);
-          }
-          const correctIndx = indxArr.indexOf(evt.newIndex);
+        const sameElementAlert = 'There was an element with the same name';
 
-          mem.forEach((n) => {
-            console.log(n);
-          });
-          mem.splice(correctIndx, 0, selectedObj.path);
-          // mem.splice(mem.length + 1 - evt.newIndex, 0, selectedObj.path);
+        let sameParent =
+          evt.from.innerHTML.replace('draggable="false"', '') ===
+          evt.to.innerHTML.replace('draggable="false"', '');
+        if (NewParent === undefined) {
+          //* If there's another element with the same name, the process is cancelled
+          //take into account, if changed from parent or moved to another
+          let add = true;
+          if (!sameParent) {
+            for (let i = 0; i < mem.length; i++) {
+              if (mem[i].title === selectedObj.title) {
+                add = false;
+                break;
+              }
+            }
+          }
+
+          if (add) {
+            //*The object is moved to the root array
+            //Cut away object
+            if (selectedCheckout.length === 1) {
+              // From root
+              mem = mem.filter((n) => n.title != selectedObj.title);
+            } else {
+              // Was a sub task;
+              oldParent.deleteChild(selectedObj.title);
+            }
+            //Place object
+            let indxArr = [];
+            for (let i = 0; i < mem.length + 1; i++) {
+              indxArr.unshift(i);
+            }
+            const correctIndx = indxArr.indexOf(evt.newIndex);
+            mem.splice(correctIndx, 0, selectedObj);
+          } else {
+            //* There was an element with the same name
+            alert(sameElementAlert);
+          }
         } else {
           //*The object is moved to a sub task postion
-          //*Cut away object
-          if (selectedObj.checkout.length === 1) {
-            // From root
-            mem = mem.filter((n) => n.title != selectedObj.path.title);
-          } else {
-            // Was a sub task;
-            selectedObj.checkout[1].deleteChild(selectedObj.path.title);
+          let add = true;
+          if (!sameParent) {
+            for (let i = 0; i < NewParent.children.length; i++) {
+              const element = NewParent.children[i];
+              if (element.title === selectedObj.title) {
+                add = false;
+                break;
+              }
+            }
           }
-          //*Adding the object
 
-          NewParent.children.forEach((n) => {
-            console.log(n);
-          });
+          if (add) {
+            //*Cut away object
+            if (selectedCheckout.length === 1) {
+              // From root
+              mem = mem.filter((n) => n.title != selectedObj.title);
+            } else {
+              // Was a sub task;
+              oldParent.deleteChild(selectedObj.title);
+            }
+            //*Adding the object
 
-          NewParent.addObj(selectedObj.path, evt.newIndex);
+            NewParent.children.forEach((n) => {
+              // console.log(n);
+            });
+
+            NewParent.addObj(selectedObj, evt.newIndex);
+          } else {
+            alert('There was an element with the same name');
+          }
         }
         //update the old parents
-        selectedObj.checkout.forEach((n, indx) => {
+        selectedCheckout.forEach((n, indx) => {
           indx > 0 ? n.flip() : {};
         });
         //update the new parents
@@ -150,7 +173,7 @@ const InitiateSortable = () => {
         });
 
         refresh();
-        console.log('refresh, end');
+        // console.log('refresh, end');
       },
     });
 

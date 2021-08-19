@@ -11,7 +11,6 @@ Editing Info by pressing the 3 dots bar
     (Prblm) Z-index of sub tasks:not(task show-off)
 
 Let user hold the 3 dot thing to move their tasks around
-    (prblm) Destroying the sortable thing will be difficult fam
     Check if the new parent has the same child
 
 New Inputs for tasks (Use SweetAlert.js)
