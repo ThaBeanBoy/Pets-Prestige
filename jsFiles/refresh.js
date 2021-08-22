@@ -5,6 +5,7 @@ const refresh = () => {
   sortInsts.forEach((n) => {
     n.destroy();
   });
+  sessionStorage.setItem('inSortMode', false);
 
   //emptying the allfather
   $('.allFather').empty();

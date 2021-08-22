@@ -45,6 +45,8 @@ const InitiateSortable = () => {
       dragClass: 'draggedClass',
 
       onChoose(evt) {
+        sessionStorage.setItem('inSortMode', true);
+
         selectedCheckout = findAdress(evt.item).checkout;
         selectedObj = findAdress(evt.item).path;
         oldParent = selectedCheckout[1];
@@ -52,6 +54,7 @@ const InitiateSortable = () => {
         $(evt.item).attr('data-state', 'not-showing');
         $(evt.item).css('background-color', 'orange');
         $(evt.item.firstChild).attr('data-state', 'not-showing');
+        $(evt.item.firstChild).css('margin-bottom', '0');
 
         openSuroundingTasks(evt.item);
       },
@@ -176,22 +179,18 @@ const InitiateSortable = () => {
 
             //*Adding the object
             NewParent.path.addObj(selectedObj, evt.newIndex);
-
-            //* Flipping all parent
-            // console.log(NewParent.checkout);
-            NewParent.checkout.forEach((n) => {
-              n.flip();
-            });
           } else {
             alert('There was an element with the same name');
           }
         }
         //update the old parents
         selectedCheckout.forEach((n, indx) => {
-          indx > 0 ? n.flip() : {};
+          // console.log(n);
+          indx > 0 && n.isCaret() ? n.flip() : {};
         });
+        console.log(NewParent);
         //update the new parents
-        findAdress(evt.item).checkout.forEach((n, indx) => {
+        NewParent.checkout.forEach((n, indx) => {
           indx > 0 ? n.flip() : {};
         });
 

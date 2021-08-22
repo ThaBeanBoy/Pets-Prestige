@@ -24,7 +24,8 @@ const displayAll = () => {
     //for task that reside in the face of the Allfather
     else {
       //Making the proper endli
-      endLi = `<li class="show-off show-off-task ${done}"><div><span class="task-txt ${done}">${n.title}</span><span span class="icon-ellipsis-vert optBtns"></span></div><ul class="nested"></ul></li>`;
+      endLi = `
+      <li class="show-off show-off-task ${done}"><div class="task"><span class="task-txt ${done}">${n.title}</span><span span class="icon-ellipsis-vert optBtns"></span></div><ul class="nested"></ul></li>`;
 
       // displayChillun(sisterWife, []);
 
@@ -72,8 +73,9 @@ const displayAll = () => {
 
   //Mirage: "Hey hey guys, check it out, check it out. I set the li events. It's not a bamboozle this time."
   //Setting up events for all tasks
-  $('.nested li, .show-off-task')
+  $('.nested li, .show-off-task, .task')
     .not('.li-caret')
+    .not('.optBtns')
     .click(() => {
       // console.log('li click');
       liClick();

@@ -1,17 +1,22 @@
 // import { todS, caretTod } from './class.js';
 
 //Setting up the local storage for memory
-if (localStorage.getItem('allTods') == null) {
+if (localStorage.getItem('allTods') === null) {
   localStorage.setItem('allTods', JSON.stringify([]));
 }
 //Setting up storage for scrollPos
-if (localStorage.getItem('scrollPos') == null) {
+if (localStorage.getItem('scrollPos') === null) {
   localStorage.setItem('scrollPos', '0');
 }
 
 //Setting if there is a editOpts (tippy) open
-if (sessionStorage.getItem('scrollPos') == null) {
+if (sessionStorage.getItem('ThersOpenTippy') === null) {
   sessionStorage.setItem('ThersOpenTippy', false);
+}
+
+//Setting if the user is using sortable
+if (sessionStorage.getItem('inSortMode') === null) {
+  sessionStorage.setItem('inSortMode', false);
 }
 
 let internalMem = JSON.parse(localStorage.getItem('allTods'));

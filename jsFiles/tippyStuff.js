@@ -1,6 +1,5 @@
 const openTippy = (target) => {
   if (!JSON.parse(sessionStorage.getItem('ThersOpenTippy'))) {
-    // debugger
     // * Setting transition speed for GSAP animation and setting default attributes for tippy
     const transitionTime = 0.25;
     const editOPts = tippy(target, {

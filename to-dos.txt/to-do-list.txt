@@ -14,7 +14,6 @@ Editing Info by pressing the 3 dots bar
     (Prblm) Z-index of sub tasks:not(task show-off)
 
 Sortable stuff
-    Be able to move an element into a TASK(It has no children)
     fix the liClick problem
 
 New Inputs for tasks (Use SweetAlert.js)
