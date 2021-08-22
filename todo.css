@@ -127,12 +127,20 @@ body .allFather > li .nested li:not(.caret):not(.li-caret) {
   border: black solid 0.1rem;
   border-radius: 0.5rem;
   padding: 0.4em;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   word-wrap: break-word;
   font-size: 1em;
+}
+
+body .allFather > li .nested li:not(.caret):not(.li-caret) div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body .allFather > li .nested li:not(.caret):not(.li-caret) .nested {
+  display: none;
+  border: none;
 }
 
 body .allFather > li .nested li:not(.caret):not(.li-caret) .task-txt {
@@ -203,12 +211,19 @@ body .allFather .done:not(.li-caret) + .nested li:not(.li-caret) {
 
 body .allFather > li:not(.caret-show-off) {
   padding: 0.4rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   font-size: 1.25em;
   font-weight: bolder;
+}
+
+body .allFather > li:not(.caret-show-off) div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body .allFather > li:not(.caret-show-off) .nested {
+  display: none;
 }
 
 body .allFather .optBtns {

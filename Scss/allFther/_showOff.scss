@@ -62,13 +62,25 @@
       border-radius: 0.5rem;
       padding: 0.4em;
 
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
+      // display: flex;
+      // flex-direction: row;
+      // align-items: center;
+      // justify-content: space-between;
 
       word-wrap: break-word;
       font-size: 1em;
+
+      div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nested {
+        display: none;
+        border: none;
+      }
 
       .task-txt {
         max-width: 90%;

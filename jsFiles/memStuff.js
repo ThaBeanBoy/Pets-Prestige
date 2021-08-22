@@ -24,7 +24,7 @@ const displayAll = () => {
     //for task that reside in the face of the Allfather
     else {
       //Making the proper endli
-      endLi = `<li class="show-off show-off-task ${done}"><span class="task-txt">${n.title}</span><span class="icon-ellipsis-vert optBtns"></span></li>`;
+      endLi = `<li class="show-off show-off-task ${done}"><div><span class="task-txt ${done}">${n.title}</span><span span class="icon-ellipsis-vert optBtns"></span></div><ul class="nested"></ul></li>`;
 
       // displayChillun(sisterWife, []);
 

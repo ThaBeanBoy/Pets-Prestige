@@ -8,16 +8,29 @@ const InitiateSortable = () => {
     ...document.querySelectorAll('.nested'),
   ];
 
-  let sortArrays = {
-    old: '',
-    new: '',
-  };
-
   for (let i = 0; i < allSortableNested.length; i++) {
+    const openSuroundingTasks = (ev, parent, index) => {
+      // console.log(parent.children.length);
+      let numOfChildren = parent.children.length;
+      let upperIndex = index - 1;
+      let lowerIndex = index + 1;
+      // console.table({
+      //   upper: upperSibling < 0 ? 'upper [0]' : 'upper [1]',
+      //   below: lowerSibling >= numOfChildren ? 'lower [0]' : 'lower[1]',
+      // });
+
+      upperIndex > 0
+        ? $(parent.children[upperIndex].children[1]).css('display', 'block')
+        : {};
+      lowerIndex < numOfChildren
+        ? $(parent.children[lowerIndex].children[1]).css('display', 'block')
+        : {};
+    };
+
     let sort = new Sortable(allSortableNested[i], {
       group: 'nested',
       animation: 150,
-      delay: 750,
+      delay: 1000,
       fallbackOnBody: true,
       swapThreshold: 0.65,
       handle: '.optBtns',
@@ -35,10 +48,11 @@ const InitiateSortable = () => {
         $(evt.item).css('background-color', 'orange');
         $(evt.item.firstChild).attr('data-state', 'not-showing');
 
-        // console.log(selectedObj);
-        sortArrays.old = document
-          .querySelector('.allFather')
-          .innerHTML.replace('draggable="true"', '');
+        // $('.nested').css('display', 'block');
+        // $(evt.item.children[1]).css('display', 'none');
+
+        console.log(evt.from, evt.oldIndex);
+        // openSuroundingTasks(evt.item, evt.from, evt.oldIndex);
       },
 
       onMove(evt) {
@@ -77,15 +91,30 @@ const InitiateSortable = () => {
         }
       },
 
-      onUnchoose() {
-        sortArrays.new = document
-          .querySelector('.allFather')
-          .innerHTML.replace('draggable="false"', '');
-        NoChanges = sortArrays.old === sortArrays.new;
+      onUnchoose(evt) {
+        // let refr = false;
+        // console.log(evt.from, evt.to, evt.from === evt.to);
+        // if (evt.from === evt.to) {
+        //   if (oldParent === undefined) {
+        //     const divs = [
+        //       ...$([...document.querySelector('.allFather').children]).children(
+        //         'div'
+        //       ),
+        //     ];
+        //     console.log(divs[evt.oldIndex].textContent === selectedObj.title);
+        //   } else {
+        //     // console.log(oldParent, evt.to);
+        //   }
+        // }
+        // NoChanges = sortArrays.old === sortArrays.new;
+        // if (NoChanges) {
+        //   refresh();
+        // }
 
-        if (NoChanges) {
-          refresh();
+        if (selectedObj.isCaret() && selectedObj.showing) {
+          $(evt.item.children[0]).attr('data-state', 'showing');
         }
+        $(evt.item).attr('style', '');
       },
 
       onEnd(evt) {
@@ -173,7 +202,7 @@ const InitiateSortable = () => {
         });
 
         refresh();
-        // console.log('refresh, end');
+        console.log('refresh, end');
       },
     });
 

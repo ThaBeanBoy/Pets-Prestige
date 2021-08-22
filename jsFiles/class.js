@@ -161,3 +161,10 @@ class todS {
     return this;
   }
 }
+
+// class Caret extends todS {
+//   constructor(){
+//     super()
+
+//   }
+// }

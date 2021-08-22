@@ -39,7 +39,7 @@ const displayChillun = (ul, kinders) => {
     else {
       //Craeting the li
       const li = $(
-        `<li class="${done}"><span class="task-txt">${n.title}</span><span class="icon-ellipsis-vert optBtns"></span></li>`
+        `<li class="${done}"><div><span class="task-txt">${n.title}</span><span class="icon-ellipsis-vert optBtns"></span></div><ul class="nested"></ul></li>`
       );
 
       // displayChillun(li, []);
