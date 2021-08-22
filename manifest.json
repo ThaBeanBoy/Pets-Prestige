@@ -1,133 +1,99 @@
 {
+  "name": "Modular To Do List",
 
-    "name": "Modular To Do List",
+  "short_name": "To Do List",
 
-    "short_name": "To Do List",
+  "description": "Modular to do list",
 
-    "description": "Modular to do list",
+  "start_url": "./index.html",
 
-    "start_url": "./todo.html",
+  "display": "standalone",
 
-    "display": "standalone",
+  "background_color": "#001B2E",
 
-    "background_color": "#001B2E",
+  "theme_color": "#FFC49B",
 
-    "theme_color": "#FFC49B",
+  "orientation": "portrait-primary",
 
-    "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./icons/logo-72.png",
 
-    "icons": [
+      "type": "image/png",
 
-        {
+      "sizes": "72x72",
 
-            "src": "./icons/logo-72.png",
+      "purpose": "any maskable"
+    },
 
-            "type": "image/png",
+    {
+      "src": "./icons/logo-96.png",
 
-            "sizes": "72x72",
+      "type": "image/png",
 
-            "purpose": "any maskable"
+      "sizes": "96x96",
 
-        },
+      "purpose": "any maskable"
+    },
 
+    {
+      "src": "./icons/logo-128.png",
 
+      "type": "image/png",
 
-        {
+      "sizes": "128x128",
 
-            "src": "./icons/logo-96.png",
+      "purpose": "any maskable"
+    },
 
-            "type": "image/png",
+    {
+      "src": "./icons/logo-144.png",
 
-            "sizes": "96x96",
+      "type": "image/png",
 
-            "purpose": "any maskable"
+      "sizes": "144x144",
 
-        },
+      "purpose": "any maskable"
+    },
 
+    {
+      "src": "./icons/logo-152.png",
 
+      "type": "image/png",
 
-        {
+      "sizes": "152x152",
 
-            "src": "./icons/logo-128.png",
+      "purpose": "any maskable"
+    },
 
-            "type": "image/png",
+    {
+      "src": "./icons/logo-192.png",
 
-            "sizes": "128x128",
+      "type": "image/png",
 
-            "purpose": "any maskable"
+      "sizes": "192x192",
 
-        }, 
+      "purpose": "any maskable"
+    },
 
+    {
+      "src": "./icons/logo-384.png",
 
+      "type": "image/png",
 
-        {
+      "sizes": "384x384",
 
-            "src": "./icons/logo-144.png",
+      "purpose": "any maskable"
+    },
 
-            "type": "image/png",
+    {
+      "src": "./icons/logo-512.png",
 
-            "sizes": "144x144",
+      "type": "image/png",
 
-            "purpose": "any maskable"
+      "sizes": "512x512",
 
-        }, 
-
-
-
-        {
-
-            "src": "./icons/logo-152.png",
-
-            "type": "image/png",
-
-            "sizes": "152x152",
-
-            "purpose": "any maskable"
-
-        }, 
-
-
-
-        {
-
-            "src": "./icons/logo-192.png",
-
-            "type": "image/png",
-
-            "sizes": "192x192",
-
-            "purpose": "any maskable"
-
-        }, 
-
-
-
-        {
-
-            "src": "./icons/logo-384.png",
-
-            "type": "image/png",
-
-            "sizes": "384x384",
-
-            "purpose": "any maskable"
-
-        }, 
-
-
-
-        {
-
-            "src": "./icons/logo-512.png",
-
-            "type": "image/png",
-
-            "sizes": "512x512",
-
-            "purpose": "any maskable"
-
-        }
-
-    ]
-
+      "purpose": "any maskable"
+    }
+  ]
 }
