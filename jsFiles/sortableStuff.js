@@ -12,19 +12,21 @@ const InitiateSortable = () => {
     (n) => n.children.length === 0
   );
   const openSuroundingTasks = (item) => {
+    const heightOfTask = parseFloat(
+      $([...$('.task')][1].parentElement).css('height')
+    );
+
     tasksNotCaret.forEach((n) => {
       if (
-        item.previousSibling !== null &&
-        n === item.previousSibling.children[1] &&
-        item.previousSibling.children[1].children.length === 0
+        (item.previousSibling !== null &&
+          n === item.previousSibling.children[1] &&
+          item.previousSibling.children[1].children.length === 0) ||
+        (item.nextSibling !== null &&
+          n === item.nextSibling.children[1] &&
+          item.nextSibling.children[1].children.length === 0)
       ) {
         $(n).css('display', 'block');
-      } else if (
-        item.nextSibling !== null &&
-        n === item.nextSibling.children[1] &&
-        item.nextSibling.children[1].children.length === 0
-      ) {
-        $(n).css('display', 'block');
+        $(n).css('min-height', `${heightOfTask / 2}px`);
       } else if (n.children.length === 0) {
         $(n).css('display', 'none');
       }
