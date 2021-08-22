@@ -10,14 +10,10 @@ if (localStorage.getItem('scrollPos') === null) {
 }
 
 //Setting if there is a editOpts (tippy) open
-if (sessionStorage.getItem('ThersOpenTippy') === null) {
-  sessionStorage.setItem('ThersOpenTippy', false);
-}
+sessionStorage.setItem('ThersOpenTippy', false);
 
 //Setting if the user is using sortable
-if (sessionStorage.getItem('inSortMode') === null) {
-  sessionStorage.setItem('inSortMode', false);
-}
+sessionStorage.setItem('inSortMode', false);
 
 let internalMem = JSON.parse(localStorage.getItem('allTods'));
 

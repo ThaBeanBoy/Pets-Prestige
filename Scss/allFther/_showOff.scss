@@ -5,6 +5,7 @@
   border: 0.2rem black solid;
   border-radius: 0.75em;
   padding: 0.25rem 0 0.25rem 0em;
+  background-color: #adb6c4;
 
   word-wrap: break-word;
 
@@ -54,6 +55,7 @@
     overflow: hidden;
 
     li:not(.caret):not(.li-caret) {
+      background-color: #adb6c4;
       position: relative;
 
       width: 99%;
@@ -85,6 +87,9 @@
       .task-txt {
         max-width: 90%;
       }
+    }
+    li.done:not(.caret):not(.li-caret) {
+      background-color: #09263c;
     }
   }
 

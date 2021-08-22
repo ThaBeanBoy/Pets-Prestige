@@ -39,36 +39,9 @@ const displayAll = () => {
 
   //Setting up events for caret
   $('.caret').click(caretClick);
-  //Setting up events for options buttons
-  const allOptBtns = document.querySelectorAll('.optBtns');
-  allOptBtns.forEach((inst) => {
-    let event = new Hammer.Manager(inst);
 
-    //* Make event listeners
-    event.add(
-      new Hammer.Tap({
-        event: 'Tap',
-        taps: 1,
-        threshold: 5,
-      })
-    );
-
-    event.add(
-      new Hammer.Press({
-        event: 'Hold',
-        time: 500,
-      })
-    );
-
-    //* Tap event
-    event.on('Tap', (inst) => {
-      openTippy(inst.target);
-    });
-
-    //* Hold event
-    // event.on('Hold', () => {
-    //   InstSortable();
-    // });
+  $('.optBtns').click(() => {
+    openTippy();
   });
 
   //Mirage: "Hey hey guys, check it out, check it out. I set the li events. It's not a bamboozle this time."

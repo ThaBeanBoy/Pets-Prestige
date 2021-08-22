@@ -16,14 +16,16 @@ const InitiateSortable = () => {
       $([...$('.task')][1].parentElement).css('height')
     );
 
+    console.log(item);
+
     tasksNotCaret.forEach((n) => {
       if (
-        (item.previousSibling !== null &&
-          n === item.previousSibling.children[1] &&
-          item.previousSibling.children[1].children.length === 0) ||
-        (item.nextSibling !== null &&
-          n === item.nextSibling.children[1] &&
-          item.nextSibling.children[1].children.length === 0)
+        (item.previousElementSibling !== null &&
+          n === item.previousElementSibling.children[1] &&
+          item.previousElementSibling.children[1].children.length === 0) ||
+        (item.nextElementSibling !== null &&
+          n === item.nextElementSibling.children[1] &&
+          item.nextElementSibling.children[1].children.length === 0)
       ) {
         $(n).css('display', 'block');
         $(n).css('min-height', `${heightOfTask / 2}px`);
@@ -47,6 +49,7 @@ const InitiateSortable = () => {
       dragClass: 'draggedClass',
 
       onChoose(evt) {
+        sessionStorage.setItem('ThersOpenTippy', true);
         sessionStorage.setItem('inSortMode', true);
 
         selectedCheckout = findAdress(evt.item).checkout;
@@ -113,6 +116,8 @@ const InitiateSortable = () => {
         $(tasksNotCaret).css('display', 'none');
       },
 
+      update() {},
+
       onEnd(evt) {
         //Sortable logic (add the object to specified location)
         console.log(findAdress(evt.item.parentElement.parentElement).path);
@@ -122,10 +127,11 @@ const InitiateSortable = () => {
         let sameParent =
           evt.from.innerHTML.replace('draggable="false"', '') ===
           evt.to.innerHTML.replace('draggable="false"', '');
+
+        let add = true;
         if (NewParent.path === undefined) {
           //* If there's another element with the same name, the process is cancelled
           //take into account, if changed from parent or moved to another
-          let add = true;
           if (!sameParent) {
             for (let i = 0; i < mem.length; i++) {
               if (mem[i].title === selectedObj.title) {
@@ -158,7 +164,6 @@ const InitiateSortable = () => {
           }
         } else {
           //*The object is moved to a sub task postion
-          let add = true;
           if (!sameParent) {
             for (let i = 0; i < NewParent.path.children.length; i++) {
               const element = NewParent.path.children[i];
@@ -185,16 +190,22 @@ const InitiateSortable = () => {
             alert('There was an element with the same name');
           }
         }
-        //update the old parents
-        selectedCheckout.forEach((n, indx) => {
-          // console.log(n);
-          indx > 0 && n.isCaret() ? n.flip() : {};
-        });
-        console.log(NewParent);
-        //update the new parents
-        NewParent.checkout.forEach((n, indx) => {
-          indx > 0 ? n.flip() : {};
-        });
+
+        if (add) {
+          //update the old parents
+          selectedCheckout.forEach((n, indx) => {
+            indx > 0 && n.isCaret() ? n.flip() : {};
+          });
+
+          //update the new parents
+          console.log(NewParent);
+          if (NewParent.path !== undefined) {
+            console.log(NewParent);
+            NewParent.checkout.forEach((n) => {
+              n.flip();
+            });
+          }
+        }
 
         refresh();
       },

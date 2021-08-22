@@ -1,8 +1,25 @@
-const openTippy = (target) => {
+const openTippy = () => {
   if (!JSON.parse(sessionStorage.getItem('ThersOpenTippy'))) {
+    sortInsts.forEach((n) => {
+      n.destroy();
+    });
+    sortInsts = [];
+
+    const Li = event.target.parentElement.parentElement;
+    const isACaretShowOff = $(Li).hasClass('caret-show-off');
+    console.log(Li, isACaretShowOff);
+    const child = $(Li);
+
     // * Setting transition speed for GSAP animation and setting default attributes for tippy
     const transitionTime = 0.25;
-    const editOPts = tippy(target, {
+    const padding = parseFloat(child.css('padding-top'));
+
+    const offsetY =
+      padding +
+      (isACaretShowOff ? parseFloat($(Li.firstChild).css('padding-top')) : 0);
+    console.log(offsetY, parseFloat($(Li.firstChild).css('padding-top')));
+
+    const editOPts = tippy(event.target, {
       zIndex: '999',
       theme: 'todTheme',
       arrow: false,
@@ -13,6 +30,7 @@ const openTippy = (target) => {
       trigger: 'click',
       interactive: true,
       appendTo: document.querySelector('body'),
+      offset: [0, offsetY],
 
       onShow(inst) {
         sessionStorage.setItem('ThersOpenTippy', true);
@@ -20,20 +38,9 @@ const openTippy = (target) => {
     });
 
     //* Finding the clicked element's address
-    console.log(target.parentElement);
-    const accessedTod = findAdress(target.parentElement);
+    const accessedTod = findAdress(Li);
 
     //* Increase the height of the nested
-    const IsAShowOff =
-      $(target.parentElement.parentElement).hasClass('show-off') ||
-      $(target.parentElement).hasClass('show-off');
-
-    const childDOM = IsAShowOff
-      ? $(target.parentElement).is('li')
-        ? target.parentElement
-        : target.parentElement.parentElement
-      : target.parentElement;
-    const child = $(childDOM);
 
     const InitalMarginTop = parseFloat(child.css('margin-top'));
 
@@ -57,9 +64,6 @@ const openTippy = (target) => {
         </h1>
       `,
 
-      //* Setting the right theme Pt 2
-      theme: 'todTheme',
-
       placement: 'top-end',
 
       animateFill: true,
@@ -70,7 +74,7 @@ const openTippy = (target) => {
         // console.log("out side click");
         editOPts.hide();
 
-        gsap.to(childDOM, {
+        gsap.to(Li, {
           marginTop: `${InitalMarginTop}px`,
 
           duration: transitionTime,
@@ -86,24 +90,19 @@ const openTippy = (target) => {
     const childMarginTop = parseFloat(child.css('margin-top'));
     const tippyHeight = parseFloat($('.tippy-box').css('height'));
 
-    let offset =
-      parseFloat(child.css('padding-top')) -
-      parseFloat(child.css('border-top-width'));
-    console.log(offset);
-    editOPts.setProps({
-      offset: [0, offset],
-    });
-
-    // editOPts.hide();
     //* Setting the css
-    const borderWidth = parseFloat(child.css('border-top-width'));
+    let borderWidth = parseFloat(child.css('border-top-width'));
     $('.tippy-box')
       .css('background-color', child.css('background-color'))
-      .css('border-width', `${borderWidth} ${borderWidth} 0 ${borderWidth}`)
+      .css(
+        'border-width',
+        `${borderWidth}px ${borderWidth}px 0px ${borderWidth}px`
+      )
       .css('border-color', `${child.css('border-top-color')}`);
     $('.tippy-box .tippy-content h1 i').css('color', child.css('color'));
     $('.tippy-box .tippy-content h1 .icon-trash-empty').css('color', '#f57a62');
 
+    //* Setting up the events for the editing of tasks
     const editorBtns = {
       editTitle() {
         accessedTod.path.editTitle();
@@ -219,14 +218,10 @@ const openTippy = (target) => {
       editorBtns.delAllDone();
     });
 
-    gsap.to(childDOM, {
+    gsap.to(Li, {
       marginTop: `${childMarginTop + tippyHeight}px`,
 
       duration: 0.25,
-      onComplete: () => {
-        // editOPts.show();
-        // editOPts.hide();
-      },
     });
   }
 };

@@ -27,9 +27,9 @@ const liClick = () => {
         //Fliping all Parents
         n.flip();
       });
-    }
 
-    //Refreshing the allFather
-    refresh();
+      //Refreshing the allFather
+      refresh();
+    }
   }
 };
