@@ -8,25 +8,30 @@ const InitiateSortable = () => {
     ...document.querySelectorAll('.nested'),
   ];
 
+  const tasksNotCaret = [...document.querySelectorAll('.nested')].filter(
+    (n) => n.children.length === 0
+  );
+  const openSuroundingTasks = (item) => {
+    tasksNotCaret.forEach((n) => {
+      if (
+        item.previousSibling !== null &&
+        n === item.previousSibling.children[1] &&
+        item.previousSibling.children[1].children.length === 0
+      ) {
+        $(n).css('display', 'block');
+      } else if (
+        item.nextSibling !== null &&
+        n === item.nextSibling.children[1] &&
+        item.nextSibling.children[1].children.length === 0
+      ) {
+        $(n).css('display', 'block');
+      } else if (n.children.length === 0) {
+        $(n).css('display', 'none');
+      }
+    });
+  };
+
   for (let i = 0; i < allSortableNested.length; i++) {
-    const openSuroundingTasks = (ev, parent, index) => {
-      // console.log(parent.children.length);
-      let numOfChildren = parent.children.length;
-      let upperIndex = index - 1;
-      let lowerIndex = index + 1;
-      // console.table({
-      //   upper: upperSibling < 0 ? 'upper [0]' : 'upper [1]',
-      //   below: lowerSibling >= numOfChildren ? 'lower [0]' : 'lower[1]',
-      // });
-
-      upperIndex > 0
-        ? $(parent.children[upperIndex].children[1]).css('display', 'block')
-        : {};
-      lowerIndex < numOfChildren
-        ? $(parent.children[lowerIndex].children[1]).css('display', 'block')
-        : {};
-    };
-
     let sort = new Sortable(allSortableNested[i], {
       group: 'nested',
       animation: 150,
@@ -48,11 +53,7 @@ const InitiateSortable = () => {
         $(evt.item).css('background-color', 'orange');
         $(evt.item.firstChild).attr('data-state', 'not-showing');
 
-        // $('.nested').css('display', 'block');
-        // $(evt.item.children[1]).css('display', 'none');
-
-        console.log(evt.from, evt.oldIndex);
-        // openSuroundingTasks(evt.item, evt.from, evt.oldIndex);
+        openSuroundingTasks(evt.item);
       },
 
       onMove(evt) {
@@ -89,43 +90,34 @@ const InitiateSortable = () => {
           //task : sub task position -> root
           $(evt.dragged).addClass('show-off').addClass('show-off-task');
         }
+
+        // openSuroundingTasks(evt.dragged);
+      },
+
+      onChange(evt) {
+        openSuroundingTasks(evt.item);
       },
 
       onUnchoose(evt) {
-        // let refr = false;
-        // console.log(evt.from, evt.to, evt.from === evt.to);
-        // if (evt.from === evt.to) {
-        //   if (oldParent === undefined) {
-        //     const divs = [
-        //       ...$([...document.querySelector('.allFather').children]).children(
-        //         'div'
-        //       ),
-        //     ];
-        //     console.log(divs[evt.oldIndex].textContent === selectedObj.title);
-        //   } else {
-        //     // console.log(oldParent, evt.to);
-        //   }
-        // }
-        // NoChanges = sortArrays.old === sortArrays.new;
-        // if (NoChanges) {
-        //   refresh();
-        // }
+        //Reverting the effects of js css manipulation that happened in the onChoose event
 
         if (selectedObj.isCaret() && selectedObj.showing) {
           $(evt.item.children[0]).attr('data-state', 'showing');
         }
         $(evt.item).attr('style', '');
+        $(tasksNotCaret).css('display', 'none');
       },
 
       onEnd(evt) {
         //Sortable logic (add the object to specified location)
-        const NewParent = findAdress(evt.item).checkout[1];
+        console.log(findAdress(evt.item.parentElement.parentElement).path);
+        const NewParent = findAdress(evt.item.parentElement.parentElement);
         const sameElementAlert = 'There was an element with the same name';
 
         let sameParent =
           evt.from.innerHTML.replace('draggable="false"', '') ===
           evt.to.innerHTML.replace('draggable="false"', '');
-        if (NewParent === undefined) {
+        if (NewParent.path === undefined) {
           //* If there's another element with the same name, the process is cancelled
           //take into account, if changed from parent or moved to another
           let add = true;
@@ -163,8 +155,8 @@ const InitiateSortable = () => {
           //*The object is moved to a sub task postion
           let add = true;
           if (!sameParent) {
-            for (let i = 0; i < NewParent.children.length; i++) {
-              const element = NewParent.children[i];
+            for (let i = 0; i < NewParent.path.children.length; i++) {
+              const element = NewParent.path.children[i];
               if (element.title === selectedObj.title) {
                 add = false;
                 break;
@@ -181,13 +173,15 @@ const InitiateSortable = () => {
               // Was a sub task;
               oldParent.deleteChild(selectedObj.title);
             }
+
             //*Adding the object
+            NewParent.path.addObj(selectedObj, evt.newIndex);
 
-            NewParent.children.forEach((n) => {
-              // console.log(n);
+            //* Flipping all parent
+            // console.log(NewParent.checkout);
+            NewParent.checkout.forEach((n) => {
+              n.flip();
             });
-
-            NewParent.addObj(selectedObj, evt.newIndex);
           } else {
             alert('There was an element with the same name');
           }
@@ -202,7 +196,6 @@ const InitiateSortable = () => {
         });
 
         refresh();
-        console.log('refresh, end');
       },
     });
 

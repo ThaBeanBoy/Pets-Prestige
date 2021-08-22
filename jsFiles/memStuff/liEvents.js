@@ -1,4 +1,5 @@
 const liClick = () => {
+  console.log(event.target);
   //Checking if the clicked is a task or an options button
   const targetClass = $(event.target);
   isEventTargetTask = {

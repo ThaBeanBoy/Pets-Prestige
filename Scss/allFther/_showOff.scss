@@ -88,7 +88,7 @@
     }
   }
 
-  [data-state='not-showing'] {
+  [data-state='not-showing']:not(.show-off-task > div) {
     margin-bottom: 0.5rem;
     border-width: 0.1rem 0.1rem 0.188rem 0.188rem;
     border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;

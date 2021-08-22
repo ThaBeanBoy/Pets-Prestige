@@ -6,7 +6,7 @@ Programming less errors
     have 1 piece of code that edits the root array instead of 2 different place (in refresh.js and )
         Then update the code in the refresh to take after that
     Have the class authenticating whether to accept a new child from sortable edits
-        use Promises to make the code neater and add functionality
+        use Promises to make the code neater and add functionality for editing, adding child/objects and all
     make a caret class that inherits from the todS class
 
 Editing Info by pressing the 3 dots bar
@@ -15,6 +15,7 @@ Editing Info by pressing the 3 dots bar
 
 Sortable stuff
     Be able to move an element into a TASK(It has no children)
+    fix the liClick problem
 
 New Inputs for tasks (Use SweetAlert.js)
     Spots => Search(ctrl + shift + F) prompt and alert
