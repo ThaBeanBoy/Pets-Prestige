@@ -1,6 +1,12 @@
 USE GSAP FOR ANIMATIONS
 
-Allow children elements with the same name, just create an id type thing to avoid manipulation duplication
+Get the hang of Webpack
+
+Get the hang of work box
+
+Make an update thingy!!!!
+
+Make icons square, not circles
 
 Programming less errors
     have 1 piece of code that edits the root array instead of 2 different place (in refresh.js and )
@@ -9,12 +15,7 @@ Programming less errors
         use Promises to make the code neater and add functionality for editing, adding child/objects and all
     make a caret class that inherits from the todS class
 
-Editing Info by pressing the 3 dots bar
-    (Prblm) offset of the tippy box is of for sub children of list
-    (Prblm) Z-index of sub tasks:not(task show-off)
-
-Sortable stuff
-    fix the liClick problem
+Allow children elements with the same name, just create an id type thing to avoid manipulation duplication
 
 New Inputs for tasks (Use SweetAlert.js)
     Spots => Search(ctrl + shift + F) prompt and alert
@@ -24,6 +25,14 @@ New Inputs for tasks (Use SweetAlert.js)
     Combine SweetAlert.js in combination with Cleave.js
 
     let users put in emojis if they want
+
+There's a bug with Sortable and tippy,
+    Tippy, if user open a tippy for a caret that's in a sub task position, there's no border.
+    When the chosen element is outside the .allFather, tippy should just close 
+
+    Sortable, if user moves an element before the delay time kicks in, there's no sortable action at all
+    When user clicks a caret or task, the open tippy should go first 
+
 
 Imports and exports and simplify the color codes in the SASS files
 
@@ -44,10 +53,16 @@ Search thingy
     Apostrophes can voetsek too
 
 Settings
+    Settings page
     Swiper has to be used to travel from home to settings
+    
+    T/F Close other carets when opening another caret within the same branch/parent
     T/F For pinging for check of a task
     T/F Have bottom piece or keep below buttons available
     Let user put certain amount of seconds until the bottom buttons close
+    T/FWhether user wants to be able to move stuff(sortablStuff.js) into a task (Not caret!!)
+
+Add quick settings and inline settings for the most important stuff
 
 Improve animation, especicially after refresh(), make something like an animation bin.
 The animation bin will log the change pre-refresh, re-add those changes then remove them...

@@ -64,7 +64,6 @@ $('#add').click(() => {
   }
 });
 let editingRoot = false;
-$('#edit-flow-of-root-arr').click(openFlowBox(mem, true));
 
 $('#del-all').click(() => {
   const yes = confirm('Are you sure, everything will be deleted');
@@ -82,12 +81,6 @@ $('.go-back').click(() => {
 
   //Removing all icons from side bar and taskbar/caretbar classes
   $('.options').empty().removeClass('taskBar').removeClass('caretBar');
-  closeFlowBox();
-});
-
-$('.close-edit-flow-box').click(() => {
-  //Closing editor
-  $('.edit-flow-background').css('width', '0%');
   closeFlowBox();
 });
 

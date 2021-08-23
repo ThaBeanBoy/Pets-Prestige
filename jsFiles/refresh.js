@@ -68,9 +68,6 @@ const refresh = () => {
     }
   });
 
-  //updating the edit flow event
-  mainBtns[2].click(openFlowBox(mem, true));
-
   //updating the delete all event
   mainBtns[3].click(() => {
     const yes = confirm('Are you sure, everything will be deleted');
