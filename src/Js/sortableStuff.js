@@ -1,6 +1,7 @@
 import Sortable from 'sortablejs';
 import findAdress from './findAddress';
 import refresh from './refresh';
+import { mem, rootEdits } from './memoryConversions';
 
 let sortInsts = [];
 
@@ -61,10 +62,11 @@ const InitiateSortable = () => {
         selectedObj = findAdress(evt.item).path;
         oldParent = selectedCheckout[1];
 
+        console.log(`Here!!!`, evt.item.firstElementChild);
         $(evt.item).attr('data-state', 'not-showing');
         $(evt.item).css('background-color', 'orange');
-        $(evt.item.firstChild).attr('data-state', 'not-showing');
-        $(evt.item.firstChild).css('margin-bottom', '0');
+        $(evt.item.firstElementChild).attr('data-state', 'not-showing');
+        $(evt.item.firstElementChild).css('margin-bottom', '0');
 
         openSuroundingTasks(evt.item);
       },
@@ -121,7 +123,7 @@ const InitiateSortable = () => {
         $(tasksNotCaret).css('display', 'none');
       },
 
-      update() {},
+      // update() {},
 
       onEnd(evt) {
         //Sortable logic (add the object to specified location)
@@ -151,7 +153,7 @@ const InitiateSortable = () => {
             //Cut away object
             if (selectedCheckout.length === 1) {
               // From root
-              mem = mem.filter((n) => n.title != selectedObj.title);
+              rootEdits.delChild(selectedObj.title);
             } else {
               // Was a sub task;
               oldParent.deleteChild(selectedObj.title);
@@ -162,7 +164,7 @@ const InitiateSortable = () => {
               indxArr.unshift(i);
             }
             const correctIndx = indxArr.indexOf(evt.newIndex);
-            mem.splice(correctIndx, 0, selectedObj);
+            rootEdits.addTaskObj(selectedObj, correctIndx);
           } else {
             //* There was an element with the same name
             alert(sameElementAlert);
@@ -183,7 +185,7 @@ const InitiateSortable = () => {
             //*Cut away object
             if (selectedCheckout.length === 1) {
               // From root
-              mem = mem.filter((n) => n.title != selectedObj.title);
+              rootEdits.delChild(selectedObj.title);
             } else {
               // Was a sub task;
               oldParent.deleteChild(selectedObj.title);
@@ -226,4 +228,4 @@ const clearSortInsts = () => {
   sortInsts = [];
 };
 
-export { InitiateSortable, clearSortInsts, sortInsts };
+export { InitiateSortable, clearSortInsts };

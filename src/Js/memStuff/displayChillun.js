@@ -17,10 +17,6 @@ const displayChillun = (ul, kinders) => {
         `<li class="${done} li-caret"><div class="caret ${done}" data-state="${show}"><span class="task-txt">${n.title}</span><span class="icon-ellipsis-vert optBtns"></span></div></li>`
       );
 
-      div.css('padding', '0');
-      div.css('border-width', '0');
-      div.css('margin', '0');
-
       displayChillun(div, n.children);
 
       //Appending the div to the newUl

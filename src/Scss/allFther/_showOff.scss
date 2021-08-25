@@ -5,7 +5,6 @@
   border: 0.2rem black solid;
   border-radius: 0.75em;
   padding: 0.25rem 0 0.25rem 0em;
-  background-color: #adb6c4;
 
   word-wrap: break-word;
 
@@ -13,9 +12,6 @@
     cursor: pointer;
     position: relative;
     width: 99.5%;
-    margin-top: 0.5rem;
-    border-width: 0 0 0 0.188rem;
-    border: solid black;
     padding: 0.4rem;
 
     display: flex;
@@ -48,9 +44,6 @@
   .nested {
     width: 99.5%;
     margin-bottom: 0.5rem;
-    border: black solid;
-    border-width: 0 0 0.188rem 0.188rem;
-    border-radius: 0 0 0.5rem 0.5rem;
     padding: 0rem 0 0.5rem 0.5rem;
     overflow: hidden;
 
@@ -60,14 +53,9 @@
 
       width: 99%;
       margin: 0.5rem 0;
-      border: black solid 0.1rem;
+      border: solid 0.1rem;
       border-radius: 0.5rem;
       padding: 0.4em;
-
-      // display: flex;
-      // flex-direction: row;
-      // align-items: center;
-      // justify-content: space-between;
 
       word-wrap: break-word;
       font-size: 1em;
@@ -91,11 +79,19 @@
     li.done:not(.caret):not(.li-caret) {
       background-color: #09263c;
     }
+
+    .li-caret {
+      background-color: #adb6c4;
+      margin-top: 0.5rem;
+      border-width: 0 0 0 0.188rem;
+      border: solid black;
+      border-radius: 0.5rem;
+    }
   }
 
   [data-state='not-showing']:not(.show-off-task > div) {
-    margin-bottom: 0.5rem;
-    border-width: 0.1rem 0.1rem 0.188rem 0.188rem;
+    // margin-bottom: 0.5rem;
+    // border-width: 0.1rem 0.1rem 0.188rem 0.188rem;
     border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
 
     & + .nested {
@@ -130,3 +126,8 @@
     border-width: 0;
   }
 }
+
+// li.caret-show-off > div {
+//   border: none;
+//   margin-bottom: 0;
+// }

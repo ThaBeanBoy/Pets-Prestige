@@ -1,19 +1,20 @@
 import { createPopper } from '@popperjs/core';
-import tippy from 'tippy.js';
+import tippy, { sticky } from 'tippy.js';
+import { gsap } from 'gsap';
 import findAdress from './findAddress';
 import refresh from './refresh';
-import { sortInsts } from './sortableStuff';
+import { clearSortInsts } from './sortableStuff';
+import { rootEdits } from './memoryConversions';
 
 const openTippy = () => {
+  console.log('tippy open');
   if (!JSON.parse(sessionStorage.getItem('ThersOpenTippy'))) {
-    sortInsts.forEach((n) => {
-      n.destroy();
-    });
-    sortInsts = [];
+    clearSortInsts();
 
+    // debugger;
     const Li = event.target.parentElement.parentElement;
-    const isACaretShowOff = $(Li).hasClass('caret-show-off');
-    console.log(Li, isACaretShowOff);
+    const isACaretShowOff =
+      $(Li).hasClass('caret-show-off') || $(Li).hasClass('li-caret');
     const child = $(Li);
 
     // * Setting transition speed for GSAP animation and setting default attributes for tippy
@@ -22,8 +23,15 @@ const openTippy = () => {
 
     const offsetY =
       padding +
-      (isACaretShowOff ? parseFloat($(Li.firstChild).css('padding-top')) : 0);
-    console.log(offsetY, parseFloat($(Li.firstChild).css('padding-top')));
+      (isACaretShowOff
+        ? parseFloat($(Li.firstElementChild).css('padding-top'))
+        : 0);
+
+    console.log(child);
+    console.table({
+      Padding: padding,
+      'Is a show off': isACaretShowOff,
+    });
 
     const editOPts = tippy(event.target, {
       zIndex: '999',
@@ -37,6 +45,7 @@ const openTippy = () => {
       interactive: true,
       appendTo: document.querySelector('body'),
       offset: [0, offsetY],
+      plugins: [sticky],
 
       onShow(inst) {
         sessionStorage.setItem('ThersOpenTippy', true);
@@ -135,7 +144,7 @@ const openTippy = () => {
         if (youSure) {
           // Deleting from the root array
           if (accessedTod.checkout.length == 1) {
-            mem = mem.filter((n) => n.title != accessedTod.path.title);
+            rootEdits.delChild(accessedTod.path.title);
           }
           // Deleting a sub child
           else {

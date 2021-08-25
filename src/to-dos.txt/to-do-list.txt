@@ -1,14 +1,29 @@
-Get the hang of Webpack
+o Problem, done tasks under a not-done task are not getting a black border, it's white, 
+    It's more of a UI problem
+
+x Get the hang of Webpack
+    x Tippy
+        x if user open a tippy for a caret that's in a sub task position, there's no border.
+        x Offset for a caret in a sub task position
+        x Events
+            x Edit
+            x Minus all
+            x Add
+            x Minus all done
+            x Delete
+    x Get the basic event going
+        x Root, Add a task
+        x Root, minus done tasks
+        x Root, Del all done
+    x Get Sortable going 
 
 Get the hang of work box
 
-Make an update thingy!!!!
+Make an update thingy
 
 Make icons square, not circles
 
 Programming less errors
-    have 1 piece of code that edits the root array instead of 2 different place (in refresh.js and )
-        Then update the code in the refresh to take after that
     Have the class authenticating whether to accept a new child from sortable edits
         use Promises to make the code neater and add functionality for editing, adding child/objects and all
     make a caret class that inherits from the todS class
@@ -25,7 +40,6 @@ New Inputs for tasks (Use SweetAlert.js)
     let users put in emojis if they want
 
 There's a bug with Sortable and tippy,
-    Tippy, if user open a tippy for a caret that's in a sub task position, there's no border.
     When the chosen element is outside the .allFather, tippy should just close 
 
     Sortable, if user moves an element before the delay time kicks in, there's no sortable action at all
@@ -61,6 +75,9 @@ Settings
     Let user put certain amount of seconds until the bottom buttons close
     T/FWhether user wants to be able to move stuff(sortablStuff.js) into a task (Not caret!!)
     Order of pages eg(1.Home, 2.Calender, 3.Settings)
+    T/F Animations
+    How long should the buttons holding the editing to the root should be held open
+        or should just be left open
 
 Add quick settings and inline settings for the most important stuff
 
@@ -75,3 +92,5 @@ The animation bin will log the change pre-refresh, re-add those changes then rem
 
 
 When the user presses back of the phone(PC and mostly Android niggas), the app should revert the last command type deal
+
+Migrate to typescript

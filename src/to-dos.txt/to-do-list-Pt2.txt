@@ -1,3 +1,5 @@
+Custom splash screen
+
 Planned to do 
     select from times of week
     select from days of a month
@@ -12,6 +14,8 @@ Online accounts and tings
     User should be able to access that data from any device using their online accounts
     Use firebase as the storage and for user validation, NodeJs and making your own servers just takes too much time for this nonsense.
     Have access to an online shop of themes and make your own custom theme.
+
+    Use dicebear for user profiles
 
 Social type of thing where people can interact with one another
     D3.js can be used to see information.
